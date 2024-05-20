@@ -1,0 +1,38 @@
+@import url('style.css');
+/* @import url('component.css'); */
+@import url('normalize.css');
+
+
+:root {
+    --base: #353888;
+    --morado: #774477;
+    --fondo-blanco: #ffff;
+    --fondo-negro: #272626;
+    --blanco: #f2f2f2;
+    --gris: #a8a8a8;
+    --black: #202020;
+    --dorado: gold;
+    --naranja: #774477;
+    --font: 'HelveticaNeueLTPro-Th';
+    --font-medium: 'HelveticaNeueLTPro-Md';
+    --font-bold: 'HelveticaNeueLTStd-Bd';
+    --fontsizeboton: 14px;
+    --border-radius: 30px;
+    --botonborder-radius: 20px;
+    --padding-section: 60px 0px;
+}
+
+.discover{
+    background-color: var(--naranja);
+}
+
+.degrade-color{
+    background: -moz-linear-gradient(top, #353888 0%, #774477 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #353888 0%, #774477 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #353888 0%, #774477 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#353888', endColorstr='#774477', GradientType=0);
+    
+}
