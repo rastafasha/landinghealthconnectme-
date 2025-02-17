@@ -4,6 +4,7 @@ import { DoctorService } from '../../services/doctor.service';
 import { Route, Router } from '@angular/router';
 import { SubcripcionService } from 'src/app/services/subcripcion.service';
 import Swal from 'sweetalert2';
+import { RegistroLandingService } from 'src/app/services/registro-landing.service';
 
 @Component({
   selector: 'app-home',
@@ -31,6 +32,7 @@ export class HomeComponent {
   
   constructor(
     private doctorService: DoctorService,
+    private registrolService: RegistroLandingService,
     private fb: FormBuilder,
     private router: Router,
     private subcripcionService: SubcripcionService,
@@ -48,9 +50,11 @@ export class HomeComponent {
       apellido: ['', Validators.required],
       speciality: [''],
       ciudad: ['', Validators.required],
+      pais: ['', Validators.required],
       email: ['', Validators.required],
       phone: ['', Validators.required],
       facebook: [''],
+      rrss: [''],
       address: ['', Validators.required],
       instagram: [''],
       dondeSeEntero: ['', Validators.required],
@@ -60,7 +64,7 @@ export class HomeComponent {
   }
 
 
-  guardarPerfil() {debugger
+  guardarPerfil() {
     const formData = new FormData();
     
       formData.append('name', this.appregistroForm.get('name')?.value);
@@ -68,7 +72,9 @@ export class HomeComponent {
       formData.append('email', this.appregistroForm.get('email')?.value);
       formData.append('speciality', this.appregistroForm.get('speciality')?.value);
       formData.append('ciudad', this.appregistroForm.get('ciudad')?.value);
+      formData.append('pais', this.appregistroForm.get('pais')?.value);
       formData.append('phone', this.appregistroForm.get('phone')?.value);
+      formData.append('rrss', this.appregistroForm.get('rrss')?.value);
       formData.append('address', this.appregistroForm.get('address')?.value);
       formData.append('terminos', this.appregistroForm.get('terminos')?.value);
       // formData.append('instagram', this.appregistroForm.get('instagram')?.value);
@@ -91,10 +97,11 @@ export class HomeComponent {
       }
 
       // console.log(data);
-      this.doctorService.createProfile(data).subscribe(
+      this.registrolService.createRegistroLanding(data).subscribe(
         (res:any) => {
           this.doctor = res;
-            this.router.navigateByUrl('/gracias');
+            // this.router.navigateByUrl('/gracias');
+            Swal.fire('Registrado!', `Gracias por Registrarte!, estaremos comunicandonos pronto`, 'success');
         },
         error => this.errors = error
       );
@@ -104,7 +111,7 @@ export class HomeComponent {
 
     crearUsuario(){
       
-      this.subcripcionService.crearUsuario(this.registerForm.value).subscribe(
+      this.subcripcionService.crearSubscripcion(this.registerForm.value).subscribe(
         resp =>{
           Swal.fire('Registrado!', `Gracias por Seguirnos!`, 'success');
           this.ngOnInit();

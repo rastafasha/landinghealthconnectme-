@@ -22,7 +22,7 @@ export class SubcripcionService {
   }
 
 
-  crearUsuario(formData: RegisterForm){
+  crearSubscripcion(formData: RegisterForm){
     return this.http.post(`${this.serverUrl}/subcripcion/store`, formData);
 
   }
