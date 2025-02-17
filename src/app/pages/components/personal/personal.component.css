@@ -1,0 +1,102 @@
+.personal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+  gap: 15px;
+
+  & .detalle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  & .profile {
+    display: flex;
+    flex-wrap: wrap;
+    align-self: baseline;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0px;
+
+    & .infoprofile {
+      display: flex;
+      flex-wrap: wrap;
+      align-self: baseline;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+
+      & h3 {
+        font-size: 20px;
+        margin: 0;
+        padding: 0;
+      }
+      & p {
+        font-size: 14px;
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    & .social_button {
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+      & a i {
+          padding: 3px;
+          font-size: 24px;
+          gap: 5px;
+
+      }
+    }
+    & .avatar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #ccc;
+      margin-bottom: 20px;
+      overflow: hidden;
+      border: 2px solid #fff;
+
+      & img {
+        display: block;
+        width: fit-content;
+      }
+    }
+
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .personal {
+    flex-direction: column;
+    & .detalle{
+        flex-direction: column;
+      }
+    
+    & .profile {
+      flex-wrap: nowrap;
+      flex-direction: row;
+      gap: 10px;
+      & .infoprofile {
+        flex-direction: column;
+      }
+    }
+    & .avatar {
+      width: 70px !important;
+      height: 70px !important;
+
+      & img {
+        width: 100% ;
+      }
+    }
+    & .social_button {
+        flex-direction: row;
+      }
+  }
+}

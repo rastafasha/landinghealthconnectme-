@@ -1,0 +1,27 @@
+<div class="newsletter clearfix">
+      <div class="wrap">
+        <div class="newsletter-title">Nuestro Newsletter.</div>
+        <div class="newsletter-form clearfix">
+          <form [formGroup]="registerForm" (ngSubmit)="crearUsuario()">
+            <input type="hidden" formControlName="id" />
+            <input
+              type="email"
+              formControlName="email"
+              placeholder="john@doe.com"
+              class="input-text"
+            />
+            <input
+              type="button"
+              class="button"
+              value="Subscribirme"
+              (click)="crearUsuario()"
+            />
+          </form>
+        </div>
+        <p>
+          Subscribete a nuesta lista de correos. Si deseas recibir información
+          sobre nuestros productos y promociones.
+        </p>
+      </div>
+      <!-- /.wrap -->
+    </div>

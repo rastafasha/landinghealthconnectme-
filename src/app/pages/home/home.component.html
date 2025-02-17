@@ -1,299 +1,117 @@
 <div class="main">
-    <header>
-        <div class="wrap">
-            <img src="./assets/upload/iphone15.png" style="width: 250px; margin-right: 100px;" alt="" class="header-img">
-            <div class="header-wrapper">
-                <div class="d-flex" style="display: flex; flex-direction: row;">
-                    <img src="./assets/svg/logoHealthConnect-02.svg" style="display: flex; width: 70px;" alt=""> <h1>Health Connect Me</h1>
-                </div>
-                <p>Agiliza tu cita con el Médico Especialista, incluyendo hora y fecha. Organiza tus Pacientes y movimientos generales Mes a mes. Ten siempre a mano tus recipes y medicinas.</p>
-               
-                <!-- <p class="autor"><a href="#">Dan Rowinski</a></p> -->
-                <div class="buttons-wrapper">
-                    <a href="#accesopaciente" class="button">App Pacientes</a>
-                    <a href="#registromedico" class="button button-stripe">Registrarme como Médico</a>
-                </div>
-            </div>
-            <!-- /.header-wrapper -->
+  <header>
+    <div class="wrap">
+      <img
+        src="./assets/upload/iphone15.png"
+        style="width: 250px; margin-right: 100px"
+        alt=""
+        class="header-img"
+      />
+      <div class="header-wrapper">
+        <div class="d-flex" style="display: flex; flex-direction: row">
+          <img
+            src="./assets/svg/logoHealthConnect-02.svg"
+            style="display: flex; width: 70px"
+            alt=""
+          />
+          <h1>Health Connect Me</h1>
         </div>
-        <!-- /.wrap -->
-    </header>
-    <div class="spanning">
-        <div class="promo clearfix">
-            <div class="wrap">
-                <div class="promo-wrapper clearfix">
-                    <div class="promo-column">
-                        <img src="./assets/upload/pin.png" height="32" width="24" alt="">
-                        <h5>Conecta.</h5>
-                        <p>Los Pacientes pueden solicitar citas directamente con clínicas, consultorios y doctores directamente.</p>
-                    </div>
-                    <div class="promo-column">
-                        <img src="./assets/upload/saturn.png" height="32" width="32" alt="">
-                        <h5>Familiar</h5>
-                        <p>Solicita la cita para un familiar sin que este registrado en la app, nuestro personal médico se contactará con usted para confirmar la cita . </p>
-                    </div>
-                    <div class="promo-column">
-                        <img src="./assets/upload/settings.png" height="32" width="33" alt="">
-                        <h5>Observa</h5>
-                        <p>Clínicas y Consultorios podrán ver su movimiento mes a mes desde cualquier dispositivo. </p>
-                    </div>
-                    <div class="promo-column">
-                        <img src="./assets/upload/easy.png" height="32" width="34" alt="">
-                        <h5>Fácil Manejo</h5>
-                        <p>Confirma tu cita sin tantas demoras y puedes pagar desde nuestra app. </p>
-                    </div>
-                    
-                </div>
-            </div>
-            <!-- /.wrap -->
+        <p>
+          Agiliza tu cita con el Médico Especialista, incluyendo hora y fecha.
+          Organiza tus Pacientes y movimientos generales Mes a mes. Ten siempre
+          a mano tus recipes y medicinas.
+        </p>
+
+        <!-- <p class="autor"><a href="#">Dan Rowinski</a></p> -->
+        <div class="buttons-wrapper">
+          <a href="#accesopaciente" class="button">App Pacientes</a>
+          <a href="#registromedico" class="button button-stripe"
+            >Registrarme como Médico</a
+          >
         </div>
-        <!-- /.promo clearfix -->
-        <div class="discover clearfix">
-            <div class="wrap">
-                <div class="discover-content clearfix">
-                    <h2>Descubre</h2>
-                    <p>y conectate a la medicina mediante nuestra tecnología para esos momentos en que necesitas un apoyo rápido y eficiente.</p>
-                    <div class="discover-button clearfix">
-                        <a href="#" class="button button-download">
-                            <span class="button-download-title">Disponible para</span>
-                            <span class="button-download-subtitle">Apple iOS</span>
-                        </a>
-                        <a href="#" class="button button-download android">
-                            <span class="button-download-title">Disponible para</span>
-                            <span class="button-download-subtitle">Android</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="discover-img">
-                    <!-- <div class="discover-img-inside"><img src="./assets/upload/discoverApp.png" height="486" width="634" alt=""></div> -->
-                    <div class="comments  ">
-                        <div class="wrap discover-img-inside">
-                            <div class="tab">
-                                <div class="box   visible">
-                                    <img src="./assets/images/app/consultorio.png" style="width: 620px !important;
-max-width: 540px;
-margin: 0 auto;
-display: flex;
-margin-left: -165px;"  alt="">
-                                </div>
-                                <div class="box  ">
-                                    <img src="./assets/upload/discoverApp.png" style="width: 620px !important;
-max-width: 560px;
-margin: 0 auto;
-display: flex;
-margin-left: -165px;" alt="">
-                                </div>
-                                
-                                <!-- <ul class="tabs">
-                                    <li class="active"></li>
-                                    <li></li>
-                                </ul> -->
-                                <!-- <a href="#" class="tab-prev"></a>
-                                <a href="#" class="tab-next"></a> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /.wrap -->
-        </div>
-        <!-- /.discover clearfix -->
-        <div class="video clearfix" id="registromedico">
-            <div class="wrap">
-                <div class="video-title">Explora. <span style="color: var(--morado)" >Health Connect me</span> en acción.</div>
-                <div class="video-subtitle">Soy Médico, Cómo me registro y comienzo a usar?.</div>
-                <div class="video-subtitle">Llena Todos los Datos a continuación y Acepta los Términos y Condiciones.</div>
-                
-                <br><br>
-                <section class="flex">
-                    <div class="container">
-                        <form [formGroup]="appregistroForm" (ngSubmit)="guardarPerfil()" id="myForm" role="form" name="registro" data-toggle="validator" method="post"accept-charset="utf-8">
-                            <!-----informacion basica----->
-                            <div class="datosbasicos row">
-                                <div class="form-group col-xs-12 col-sm-4">
-                                    <label class="control-label">Nombre</label>
-                                    <input type="text" required="required" class="form-control" formControlName="nombre" />
-                                </div>
-                                <div class="form-group col-xs-12 col-sm-4">
-                                    <label class="control-label">Apellido</label>
-                                    <input type="text" required="required" class="form-control" formControlName="apellido" />
-                                </div>
-                                <div class="form-group col-xs-12 col-sm-4">
-                                    <label class="control-label">Especialidad</label>
-                                    <input type="text" required="required" class="form-control" formControlName="speciality" />
-                                </div>
-                                
-                                <div class="form-group col-xs-12 col-sm-4">
-                                    <label class="control-label">Correo Electrónico</label>
-                                    <input type="email" required="required" class="form-control" formControlName="email" />
-                                </div>
-                                
-                                <div class="form-group col-xs-12 col-sm-4">
-                                    <label class="control-label">Celular</label>
-                                    <input type="text" required="phone" class="form-control" formControlName="phone" />
-                                </div>
-                                <div class="form-group col-xs-12 col-sm-4">
-                                    <label class="control-label">Ciudad</label>
-                                    <input type="text" required="required" class="form-control" formControlName="ciudad" />
-                                </div>
-                                <div class="form-group col-xs-12 col-sm-4">
-                                    <label class="control-label">País</label>
-                                    <input type="text" required="required" class="form-control" formControlName="pais" />
-                                </div>
-                                <div class="form-group col-xs-12 col-sm-12">
-                                    <label class="control-label">Dirección Consultorio</label>
-                                    <textarea formControlName="address" class="form-control"  style="height:120px;" required="required"></textarea>
-                                </div>
-                                
-                                <!-- <div class="form-group col-xs-12 col-sm-4">
-                                    <label class="control-label">Foto Perfil</label>
-                                    <input type="email" required="required" class="form-control" name="photo" />
-                                </div> -->
-                                <div class="form-group col-xs-12 col-sm-4">
-                                    <label class="control-label">Facebook (opcional)</label>
-                                    <input type="text" class="form-control" formControlName="facebook" />
-                                </div>
-                                <div class="form-group col-xs-12 col-sm-4">
-                                    <label class="control-label">Instagram (opcional)</label>
-                                    <input type="text"  class="form-control" formControlName="instagram" />
-                                </div>
-                                <div class="form-group col-xs-12 col-sm-4">
-                                    <label class="control-label">Otra Red Social</label>
-                                    <input type="rrss"  class="form-control" formControlName="rrss" />
-                                </div>
-                                
-                                <div class="form-group col-xs-12 col-sm-4">
-                                    <label class="control-label">Donde se entero?</label>
-            
-                                    <select formControlName="dondeSeEntero" id="input" class="form-control" required="required" onChange="mostrar(this.value);" >
-                                        <option value="">Seleccione</option>
-                                        <option value="Facebook">Facebook</option>
-                                        <option value="Instagram">Instagram</option>
-                                        <option value="Google">Google</option>
-                                        <option value="otro">Otro</option>
-                                    </select>
-                                </div>
-                                <div class="form-group col-xs-12 col-sm-4" id="otro" style="display: none;">
-                                    <label class="control-label">Cómo, Donde, Quién ?</label>
-                                    <input type="text"  class="form-control" formControlName="dondeSeEntero" />
-                                </div>
-            
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-md-12">
-                                    <div class="checkbox checkbox-primary p-t-0">
-                                        <input id="checkbox-signup" formControlName="terminos" name="terminos" type="checkbox" required="required">
-                                        <label for="checkbox-signup"> Acepto <a href="javascript:void(0)"  data-toggle="modal" data-target="#staticBackdrop">los Términos y Condiciones </a></label>
-                                    </div>
-                                </div>
-                            </div>
-            
-                            <div class="clear"></div>
-                            <input type="hidden" formControlName="id">
-                            <input type="submit" name="contactar" value="Registrarme"
-                                class="col-xs-12 col-sm-4 col-sm-push-4 btn btn-success" />
-                        </form>
-                    </div>
-                </section>
-            </div>
-            <!-- /.wrap -->
-        </div>
-        <!-- /.videos clearfix -->
-        <div class="comments clearfix" style="background: var(--morado);">
-            <div class="wrap">
-                <div class="tab">
-                    <div class="box visible">
-                        <h4>Comentarios de Nuestros usuarios <a href="#">#HealthConnectMeApp</a></h4>
-                        <p>Unete a la mejora de nuestros servicios medicos #HealthConnectMeApp.</p>
-                    </div>
-                    <!-- <div class="box">
-                        <h4>Users loving <a href="#">#HealthConnectMeApp</a></h4>
-                        <p>Joining this weekend's #WalkandRide fun! @emmy_lemmy bring your dogs, we can make it a fun walk!</p>
-                    </div>
-                    <div class="box">
-                        <h4>Folks enjoying <a href="#">#HealthConnectMeApp</a></h4>
-                        <p>Nothing to fear, the new #WalkandRide has my tiny street covered, so cool and such a powerful app.</p>
-                    </div>
-                    <ul class="tabs">
-                        <li class="active"></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                    <a href="#" class="tab-prev"></a>
-                    <a href="#" class="tab-next"></a> -->
-                </div>
-            </div>
-            <!-- /.wrap -->
-        </div>
-        <!-- /.comments clearfix -->
-        <div class="simple clearfix" >
-            <div class="wrap">
-                <div class="simple-content">
-                    <h3>Interfaz Amigable</h3>
-                    <ul>
-                        <li class="clearfix"><img src="./assets/upload/ico1.png" height="32" width="32" alt=""><span>Rapida Navegación</span></li>
-                        <li class="clearfix"><img src="./assets/upload/ico2.png" height="32" width="32" alt=""><span>Directorio en Constante Crecimiento</span></li>
-                        <li class="clearfix"><img src="./assets/upload/ico3.png" height="32" width="32" alt=""><span>Sólo los mejores especialistas</span></li>
-                        <li class="clearfix"><img src="./assets/upload/ico4.png" height="32" width="32" alt=""><span>Notificaciones a via email</span></li>
-                        <li class="clearfix"><img src="./assets/upload/ico5.png" height="32" width="32" alt=""><span>Tu información médica respaldada</span></li>
-                    </ul>
-                </div>
-                <div class="simple-img">
-                    <img src="./assets/upload/screenApp.png" height="508" width="587" alt="">
-                </div>
-            </div>
-            <!-- /.wrap -->
-        </div>
-        <div class="discover clearfix" id="accesopaciente">
-            <div class="wrap">
-                <div class="discover-content clearfix">
-                    <h2>Accede</h2>
-                    <p>Soy Paciente y quiero acceder a la aplicación</p>
-                    <p>Con tu Teléfono Inteligente escanea y accede por tu navedador y sígue las instrucciones de instalación</p>
-                    <div class="discover-button clearfix">
-                        <a href="#" class="button button-download">
-                            <span class="button-download-title">Disponible para</span>
-                            <span class="button-download-subtitle">Apple iOS</span>
-                        </a>
-                        <a href="#" class="button button-download android">
-                            <span class="button-download-title">Disponible para</span>
-                            <span class="button-download-subtitle">Android</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="discover-img">
-                    <div class="discover-img-inside">
-                        <img src="./assets/images/app/qrapppaciente.png" style="display: block;
-                        margin: 60px auto; width: 200px;" alt="">
-                    </div>
-                    
-                </div>
-            </div>
-            <!-- /.wrap -->
-        </div>
-        <!-- /.simple clearfix -->
-        <div class="newsletter clearfix">
-            <div class="wrap">
-                <div class="newsletter-title">Nuestro Newsletter.</div>
-                <div class="newsletter-form clearfix">
-                    <form [formGroup]="registerForm" (ngSubmit)="crearUsuario()">
-                        <input type="hidden" formControlName="id">
-                        <input type="email" formControlName="email" placeholder="john@doe.com" class="input-text">
-                        <input type="button" class="button" value="Subscribirme" (click)="crearUsuario()">
-                    </form>
-                </div>
-                <p>Subscribete a nuesta lista de correos. Si deseas recibir información sobre nuestros productos y promociones.</p>
-            </div>
-            <!-- /.wrap -->
-        </div>
-        <!-- /.newsletter clearfix -->
+      </div>
+      <!-- /.header-wrapper -->
     </div>
-    <!-- /.spanning-columns -->
+    <!-- /.wrap -->
+  </header>
+  <div class="spanning">
+    <div class="promo clearfix">
+      <div class="wrap">
+        <div class="promo-wrapper clearfix">
+          <div class="promo-column">
+            <img src="./assets/upload/pin.png" height="32" width="24" alt="" />
+            <h5>Conecta.</h5>
+            <p>
+              Los Pacientes pueden solicitar citas directamente con clínicas,
+              consultorios y doctores directamente.
+            </p>
+          </div>
+          <div class="promo-column">
+            <img
+              src="./assets/upload/saturn.png"
+              height="32"
+              width="32"
+              alt=""
+            />
+            <h5>Familiar</h5>
+            <p>
+              Solicita la cita para un familiar sin que este registrado en la
+              app, nuestro personal médico se contactará con usted para
+              confirmar la cita .
+            </p>
+          </div>
+          <div class="promo-column">
+            <img
+              src="./assets/upload/settings.png"
+              height="32"
+              width="33"
+              alt=""
+            />
+            <h5>Observa</h5>
+            <p>
+              Clínicas y Consultorios podrán ver su movimiento mes a mes desde
+              cualquier dispositivo.
+            </p>
+          </div>
+          <div class="promo-column">
+            <img src="./assets/upload/easy.png" height="32" width="34" alt="" />
+            <h5>Fácil Manejo</h5>
+            <p>
+              Confirma tu cita sin tantas demoras y puedes pagar desde nuestra
+              app.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- /.wrap -->
+    </div>
+    <!-- /.promo clearfix -->
+
+    <!-- /.newsletter clearfix -->
+  </div>
+  <!-- /.spanning-columns -->
+  <app-descubre></app-descubre>
+  <!-- /.discover clearfix -->
+  <app-video
+    [appregistroForm]="appregistroForm"
+    [guardarPerfil]="guardarPerfil"
+  ></app-video>
+  <!-- /.videos clearfix -->
+  <app-comentarios></app-comentarios>
+  <!-- /.comments clearfix -->
+  <app-interfaz></app-interfaz>
+  <!-- <app-accede ></app-accede> -->
+  <app-personal ></app-personal>
+  <!-- /.simple clearfix -->
+  <app-newsletter
+    [registerForm]="registerForm"
+    [crearUsuario]="crearUsuario"
+  ></app-newsletter>
 </div>
 <!-- /.main -->
 <footer>
-    <div class="wrap">
-        <p>&copy; 2024 Health Connect me., All Rights Reserved</p>
-    </div>
-    <!-- /.wrap -->
+  <div class="wrap">
+    <p>&copy; 2024 Health Connect me., All Rights Reserved</p>
+  </div>
+  <!-- /.wrap -->
 </footer>
