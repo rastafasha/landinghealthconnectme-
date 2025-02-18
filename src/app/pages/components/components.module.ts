@@ -9,6 +9,7 @@ import { VideoComponent } from './video/video.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PersonalComponent } from './personal/personal.component';
 import { FormularioRegistroComponent } from './formulario-registro/formulario-registro.component';
+import { SpaningComponent } from './spaning/spaning.component';
 
 
 
@@ -21,7 +22,8 @@ import { FormularioRegistroComponent } from './formulario-registro/formulario-re
     NewsletterComponent,
     VideoComponent,
     PersonalComponent,
-    FormularioRegistroComponent
+    FormularioRegistroComponent,
+    SpaningComponent
   ],
   exports: [
     ComentariosComponent,
@@ -31,7 +33,8 @@ import { FormularioRegistroComponent } from './formulario-registro/formulario-re
     NewsletterComponent,
     VideoComponent,
     PersonalComponent,
-    FormularioRegistroComponent
+    FormularioRegistroComponent,
+    SpaningComponent
   ],
   imports: [
     CommonModule,

@@ -34,61 +34,8 @@
     </div>
     <!-- /.wrap -->
   </header>
-  <div class="spanning">
-    <div class="promo clearfix">
-      <div class="wrap">
-        <div class="promo-wrapper clearfix">
-          <div class="promo-column">
-            <img src="./assets/upload/pin.png" height="32" width="24" alt="" />
-            <h5>Conecta.</h5>
-            <p>
-              Los Pacientes pueden solicitar citas directamente con clínicas,
-              consultorios y doctores directamente.
-            </p>
-          </div>
-          <div class="promo-column">
-            <img
-              src="./assets/upload/saturn.png"
-              height="32"
-              width="32"
-              alt=""
-            />
-            <h5>Familiar</h5>
-            <p>
-              Solicita la cita para un familiar sin que este registrado en la
-              app, nuestro personal médico se contactará con usted para
-              confirmar la cita .
-            </p>
-          </div>
-          <div class="promo-column">
-            <img
-              src="./assets/upload/settings.png"
-              height="32"
-              width="33"
-              alt=""
-            />
-            <h5>Observa</h5>
-            <p>
-              Clínicas y Consultorios podrán ver su movimiento mes a mes desde
-              cualquier dispositivo.
-            </p>
-          </div>
-          <div class="promo-column">
-            <img src="./assets/upload/easy.png" height="32" width="34" alt="" />
-            <h5>Fácil Manejo</h5>
-            <p>
-              Confirma tu cita sin tantas demoras y puedes pagar desde nuestra
-              app.
-            </p>
-          </div>
-        </div>
-      </div>
-      <!-- /.wrap -->
-    </div>
-    <!-- /.promo clearfix -->
-
-    <!-- /.newsletter clearfix -->
-  </div>
+  <!-- <app-spaning ></app-spaning> -->
+  <app-interfaz></app-interfaz>
   <!-- /.spanning-columns -->
   <app-descubre></app-descubre>
   <!-- /.discover clearfix -->
@@ -96,12 +43,13 @@
 
   <app-formulario-registro [appregistroForm]="appregistroForm" [guardarPerfil]="guardarPerfil"></app-formulario-registro>
   <!-- /.videos clearfix -->
-  <app-comentarios></app-comentarios>
+  
   <!-- /.comments clearfix -->
-  <app-interfaz></app-interfaz>
+  
   <!-- <app-accede ></app-accede> -->
   <app-personal ></app-personal>
   <!-- /.simple clearfix -->
+  <app-comentarios></app-comentarios>
   <app-newsletter></app-newsletter>
 </div>
 <!-- /.main -->
