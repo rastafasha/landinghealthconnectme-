@@ -1,0 +1,240 @@
+<section class="flex formulario">
+    <div class="container">
+      <form
+        [formGroup]="appregistroForm"
+        (ngSubmit)="guardarPerfil()"
+        id="myForm"
+        role="form"
+        name="registro"
+        data-toggle="validator"
+        method="post"
+        accept-charset="utf-8"
+      >
+        <!-----informacion basica----->
+        <div class="datosbasicos row">
+          <div class="form-group col-xs-12 col-sm-4 col-md-3 col-sm-6">
+            <label class="control-label">Nombre</label>
+            <input
+              type="text"
+              required="required"
+              class="form-control"
+              formControlName="nombre"
+            />
+            <!-- <div class="text-danger">
+              <div *ngIf="appregistroForm.controls['nombre'].touched">
+                <span >información requerida.</span>
+              </div>
+              <div *ngIf="appregistroForm.controls['nombre'].errors?.['minlength']">
+                <span >3 caracteres mínimo.</span>
+              </div>
+            </div> -->
+          </div>
+          <div class="form-group col-xs-12 col-sm-4 col-md-3 col-sm-6">
+            <label class="control-label">Apellido</label>
+            <input
+              type="text"
+              required="required"
+              class="form-control"
+              formControlName="apellido"
+            />
+            <!-- <div class="text-danger">
+              <div *ngIf="appregistroForm.controls['apellido'].touched">
+                <span >información requerida.</span>
+              </div>
+              <div *ngIf="appregistroForm.controls['apellido'].errors?.['minlength']">
+                <span >3 caracteres mínimo.</span>
+              </div>
+            </div> -->
+          </div>
+          <div class="form-group col-xs-12 col-sm-4 col-md-3 col-sm-6">
+            <label class="control-label">Especialidad</label>
+            <input
+              type="text"
+              required="required"
+              class="form-control"
+              formControlName="speciality"
+            />
+            <!-- <div class="text-danger">
+              <div *ngIf="appregistroForm.controls['speciality'].touched">
+                <span >información requerida.</span>
+              </div>
+              <div *ngIf="appregistroForm.controls['speciality'].errors?.['minlength']">
+                <span >3 caracteres mínimo.</span>
+              </div>
+            </div> -->
+          </div>
+          <div class="form-group col-xs-12 col-sm-4 col-md-3 col-sm-6">
+            <label class="control-label">Tipo</label>
+            <select class="form-control" formControlName="type_id"   >
+              <option *ngFor="let data of types" [value]="data.id">
+              {{data.name}}
+              </option>
+          </select>
+          </div>
+
+          <div class="form-group col-xs-12 col-sm-4 col-md-3 col-sm-6">
+            <label class="control-label">Correo Electrónico</label>
+            <input
+              type="email"
+              required="required"
+              class="form-control"
+              formControlName="email"
+            />
+            <!-- <div class="text-danger">
+              <div *ngIf="appregistroForm.controls['email'].touched">
+                <span >información requerida.</span>
+              </div>
+              <div *ngIf="appregistroForm.controls['email'].errors?.['minlength']">
+                <span >3 caracteres mínimo.</span>
+              </div>
+            </div> -->
+          </div>
+
+          <div class="form-group col-xs-12 col-sm-4 col-md-3 col-sm-6">
+            <label class="control-label">Celular</label>
+            <input
+              type="text"
+              required="phone"
+              class="form-control"
+              formControlName="phone"
+            />
+            <!-- <div class="text-danger">
+              <div *ngIf="appregistroForm.controls['phone'].touched">
+                <span >información requerida.</span>
+              </div>
+              <div *ngIf="appregistroForm.controls['phone'].errors?.['minlength']">
+                <span >3 caracteres mínimo.</span>
+              </div>
+            </div> -->
+          </div>
+          <div class="form-group col-xs-12 col-sm-4 col-md-3 col-sm-6">
+            <label class="control-label">Ciudad</label>
+            <input
+              type="text"
+              required="required"
+              class="form-control"
+              formControlName="ciudad"
+            />
+          </div>
+          <div class="form-group col-xs-12 col-sm-4 col-md-3 col-sm-6">
+            <label class="control-label">País</label>
+            <select class="form-control" formControlName="pais"  >
+              <option *ngFor="let data of paises" [value]="data.id">
+              {{data.title}}
+              </option>
+              </select>
+            <!-- <input
+              type="text"
+              required="required"
+              class="form-control"
+              formControlName="pais"
+            /> -->
+            <!-- <div class="text-danger">
+              <div *ngIf="appregistroForm.controls['pais'].touched">
+                <span >información requerida.</span>
+              </div>
+              <div *ngIf="appregistroForm.controls['pais'].errors?.['minlength']">
+                <span >3 caracteres mínimo.</span>
+              </div>
+            </div> -->
+          </div>
+          <div class="form-group col-xs-12 col-sm-12">
+            <label class="control-label">Dirección Consultorio</label>
+            <textarea
+              formControlName="address"
+              class="form-control"
+              style="height: 120px"
+              required="required"
+            ></textarea>
+          </div>
+
+          <div class="form-group col-xs-12 col-sm-4 col-md-3 col-sm-6">
+            <label class="control-label">Facebook (opcional)</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="facebook"
+            />
+          </div>
+          <div class="form-group col-xs-12 col-sm-4 col-md-3 col-sm-6">
+            <label class="control-label">Instagram (opcional)</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="instagram"
+            />
+          </div>
+          <div class="form-group col-xs-12 col-sm-4 col-md-3 col-sm-6">
+            <label class="control-label">Otra Red Social</label>
+            <input
+              type="rrss"
+              class="form-control"
+              formControlName="rrss"
+            />
+          </div>
+
+          <div class="form-group col-xs-12 col-sm-4 col-md-3 col-sm-6">
+            <label class="control-label">Donde se entero?</label>
+
+            <select
+              formControlName="dondeSeEntero"
+              id="input"
+              class="form-control"
+              required="required"
+              onChange="mostrar(this.value);"
+            >
+              <option value="">Seleccione</option>
+              <option value="Facebook">Facebook</option>
+              <option value="Instagram">Instagram</option>
+              <option value="Google">Google</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+          <div
+            class="form-group col-xs-12 col-sm-4"
+            id="otro"
+            style="display: none"
+          >
+            <label class="control-label">Cómo, Donde, Quién ?</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="dondeSeEntero"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-md-12">
+            <div class="checkbox checkbox-primary p-t-0">
+              <input
+                id="checkbox-signup"
+                formControlName="terminos"
+                name="terminos"
+                type="checkbox"
+                required="required"
+              />
+              <label for="checkbox-signup">
+                Acepto
+                <a
+                  href="javascript:void(0)"
+                  data-toggle="modal"
+                  data-target="#staticBackdrop"
+                  >los Términos y Condiciones
+                </a></label
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="clear"></div>
+        <input type="hidden" formControlName="id" />
+        <input
+          type="submit"
+          name="contactar"
+          value="Registrarme"
+          class="col-xs-12 col-sm-4 col-sm-push-4 btn btn-success"
+          [disabled]="appregistroForm.invalid"
+        />
+      </form>
+    </div>
+  </section>

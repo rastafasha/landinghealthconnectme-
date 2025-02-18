@@ -92,10 +92,9 @@
   <!-- /.spanning-columns -->
   <app-descubre></app-descubre>
   <!-- /.discover clearfix -->
-  <app-video
-    [appregistroForm]="appregistroForm"
-    [guardarPerfil]="guardarPerfil"
-  ></app-video>
+  <app-video></app-video>
+
+  <app-formulario-registro [appregistroForm]="appregistroForm" [guardarPerfil]="guardarPerfil"></app-formulario-registro>
   <!-- /.videos clearfix -->
   <app-comentarios></app-comentarios>
   <!-- /.comments clearfix -->
@@ -103,15 +102,12 @@
   <!-- <app-accede ></app-accede> -->
   <app-personal ></app-personal>
   <!-- /.simple clearfix -->
-  <app-newsletter
-    [registerForm]="registerForm"
-    [crearUsuario]="crearUsuario"
-  ></app-newsletter>
+  <app-newsletter></app-newsletter>
 </div>
 <!-- /.main -->
 <footer>
   <div class="wrap">
-    <p>&copy; 2024 Health Connect me., All Rights Reserved</p>
+    <p>&copy; Copyright {{year}} Health Connect Me - Todos los derechos reservados.</p>
   </div>
   <!-- /.wrap -->
 </footer>

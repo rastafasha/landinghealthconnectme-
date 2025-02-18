@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
-import { DoctorService } from '../../services/doctor.service';
-import { Route, Router } from '@angular/router';
-import { SubcripcionService } from 'src/app/services/subcripcion.service';
 import Swal from 'sweetalert2';
 import { RegistroLandingService } from 'src/app/services/registro-landing.service';
 
@@ -12,6 +9,8 @@ import { RegistroLandingService } from 'src/app/services/registro-landing.servic
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+
+  year: number = new Date().getFullYear();
 
   public appregistroForm!: FormGroup;
   public doctor: any;
@@ -24,18 +23,11 @@ export class HomeComponent {
   error = null;
   username: FormControl<any>;
 
-  public registerForm = this.fb.group({
-    id: [''],
-    email: [ '', [Validators.required] ]
-
-  });
+  
   
   constructor(
-    private doctorService: DoctorService,
     private registrolService: RegistroLandingService,
     private fb: FormBuilder,
-    private router: Router,
-    private subcripcionService: SubcripcionService,
   ) { }
   
   ngOnInit(): void {
@@ -51,12 +43,13 @@ export class HomeComponent {
       speciality: [''],
       ciudad: ['', Validators.required],
       pais: ['', Validators.required],
-      email: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
       phone: ['', Validators.required],
       facebook: [''],
       rrss: [''],
       address: ['', Validators.required],
       instagram: [''],
+      type_id: [''],
       dondeSeEntero: ['', Validators.required],
       terminos: ['', Validators.required],
       status: ['PENDING'],
@@ -71,6 +64,7 @@ export class HomeComponent {
       formData.append('apellido', this.appregistroForm.get('apellido')?.value);
       formData.append('email', this.appregistroForm.get('email')?.value);
       formData.append('speciality', this.appregistroForm.get('speciality')?.value);
+      formData.append('type_id', this.appregistroForm.get('type_id')?.value);
       formData.append('ciudad', this.appregistroForm.get('ciudad')?.value);
       formData.append('pais', this.appregistroForm.get('pais')?.value);
       formData.append('phone', this.appregistroForm.get('phone')?.value);
@@ -109,18 +103,6 @@ export class HomeComponent {
     }
 
 
-    crearUsuario(){
-      
-      this.subcripcionService.crearSubscripcion(this.registerForm.value).subscribe(
-        resp =>{
-          Swal.fire('Registrado!', `Gracias por Seguirnos!`, 'success');
-          this.ngOnInit();
-        },(error) => {
-          Swal.fire('Error', error.error.msg, 'error');
-          this.errors = error.error;
-        }
-      );
-  
-    }
+    
 }
 

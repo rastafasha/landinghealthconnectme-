@@ -8,6 +8,7 @@ import { NewsletterComponent } from './newsletter/newsletter.component';
 import { VideoComponent } from './video/video.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PersonalComponent } from './personal/personal.component';
+import { FormularioRegistroComponent } from './formulario-registro/formulario-registro.component';
 
 
 
@@ -19,7 +20,8 @@ import { PersonalComponent } from './personal/personal.component';
     InterfazComponent,
     NewsletterComponent,
     VideoComponent,
-    PersonalComponent
+    PersonalComponent,
+    FormularioRegistroComponent
   ],
   exports: [
     ComentariosComponent,
@@ -28,7 +30,8 @@ import { PersonalComponent } from './personal/personal.component';
     InterfazComponent,
     NewsletterComponent,
     VideoComponent,
-    PersonalComponent
+    PersonalComponent,
+    FormularioRegistroComponent
   ],
   imports: [
     CommonModule,
