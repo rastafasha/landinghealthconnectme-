@@ -124,6 +124,9 @@ export class FormularioRegistroComponent implements OnInit {
               this.doctor = res;
                 // this.router.navigateByUrl('/gracias');
                 Swal.fire('Registrado!', `Gracias por Registrarte!, estaremos comunicandonos pronto`, 'success');
+                this.ngOnInit();
+                // location.reload();
+
             },
             error => this.errors = error
           );

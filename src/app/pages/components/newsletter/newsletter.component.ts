@@ -33,6 +33,7 @@ export class NewsletterComponent  {
           },(error) => {
             Swal.fire('Error', error.error.msg, 'error');
             this.errors = error.error;
+            
           }
         );
     
