@@ -1,6 +1,28 @@
-<section class="flex formulario">
+<section class="flex formulario pt-10">
     <div class="container">
-      <form
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <div class="video clearfix" id="registromedico">
+            <div class="wrap">
+              <div class="video-title">
+                Explora.
+                <span style="color: var(--morado)">Health Connect me</span> en acción.
+              </div>
+              <div class="video-subtitle">
+                Te ayudaremos con la implementación del programa facilitándote todo lo necesario para maximizar su uso entre los empleados. Entre otras cosas:
+              </div>
+              <!-- <div class="video-subtitle">
+                Llena Todos los Datos a continuación y Acepta los Términos y
+                Condiciones.<br> Para enviarle acceso al Demo.
+              </div> -->
+      
+              <br /><br />
+              
+            </div>
+            <!-- /.wrap -->
+          </div>
+        </div>
+        <form
         [formGroup]="appregistroForm"
         (ngSubmit)="guardarPerfil()"
         id="myForm"
@@ -9,10 +31,11 @@
         data-toggle="validator"
         method="post"
         accept-charset="utf-8"
+        class="col-xs-12 col-sm-6"
       >
         <!-----informacion basica----->
         <div class="datosbasicos row">
-          <div class="form-group col-xs-12 col-sm-4 col-md-3 col-sm-6">
+          <div class="form-group col-xs-12 col-sm-6">
             <label class="control-label">Nombre</label>
             <input
               type="text"
@@ -29,7 +52,7 @@
               </div>
             </div> -->
           </div>
-          <div class="form-group col-xs-12 col-sm-4 col-md-3 col-sm-6">
+          <div class="form-group col-xs-12 col-sm-6">
             <label class="control-label">Apellido</label>
             <input
               type="text"
@@ -46,7 +69,7 @@
               </div>
             </div> -->
           </div>
-          <div class="form-group col-xs-12 col-sm-4 col-md-3 col-sm-6">
+          <!-- <div class="form-group col-xs-12 col-sm-12">
             <label class="control-label">Especialidad</label>
             <input
               type="text"
@@ -54,16 +77,8 @@
               class="form-control"
               formControlName="speciality"
             />
-            <!-- <div class="text-danger">
-              <div *ngIf="appregistroForm.controls['speciality'].touched">
-                <span >información requerida.</span>
-              </div>
-              <div *ngIf="appregistroForm.controls['speciality'].errors?.['minlength']">
-                <span >3 caracteres mínimo.</span>
-              </div>
-            </div> -->
-          </div>
-          <div class="form-group col-xs-12 col-sm-4 col-md-3 col-sm-6">
+          </div> -->
+          <div class="form-group col-xs-12 col-sm-6">
             <label class="control-label">Tipo</label>
             <select class="form-control" formControlName="type_id"   >
               <option *ngFor="let data of types" [value]="data.id">
@@ -72,7 +87,7 @@
           </select>
           </div>
 
-          <div class="form-group col-xs-12 col-sm-4 col-md-3 col-sm-6">
+          <div class="form-group col-xs-12 col-sm-6">
             <label class="control-label">Correo Electrónico</label>
             <input
               type="email"
@@ -90,7 +105,7 @@
             </div> -->
           </div>
 
-          <div class="form-group col-xs-12 col-sm-4 col-md-3 col-sm-6">
+          <div class="form-group col-xs-12 col-sm-6">
             <label class="control-label">Celular</label>
             <input
               type="text"
@@ -107,7 +122,7 @@
               </div>
             </div> -->
           </div>
-          <div class="form-group col-xs-12 col-sm-4 col-md-3 col-sm-6">
+          <!-- <div class="form-group col-xs-12 col-sm-6">
             <label class="control-label">Ciudad</label>
             <input
               type="text"
@@ -115,8 +130,8 @@
               class="form-control"
               formControlName="ciudad"
             />
-          </div>
-          <div class="form-group col-xs-12 col-sm-4 col-md-3 col-sm-6">
+          </div> -->
+          <div class="form-group col-xs-12 col-sm-6">
             <label class="control-label">País</label>
             <select class="form-control" formControlName="pais_id"  >
               <option *ngFor="let data of paises" [value]="data.id">
@@ -138,7 +153,7 @@
               </div>
             </div> -->
           </div>
-          <div class="form-group col-xs-12 col-sm-12">
+          <!-- <div class="form-group col-xs-12 col-sm-12">
             <label class="control-label">Dirección Consultorio</label>
             <textarea
               formControlName="address"
@@ -146,9 +161,9 @@
               style="height: 120px"
               required="required"
             ></textarea>
-          </div>
+          </div> -->
 
-          <div class="form-group col-xs-12 col-sm-4 col-md-3 col-sm-6">
+          <!-- <div class="form-group col-xs-12 col-sm-6">
             <label class="control-label">Facebook (opcional)</label>
             <input
               type="text"
@@ -156,7 +171,7 @@
               formControlName="facebook"
             />
           </div>
-          <div class="form-group col-xs-12 col-sm-4 col-md-3 col-sm-6">
+          <div class="form-group col-xs-12 col-sm-6">
             <label class="control-label">Instagram (opcional)</label>
             <input
               type="text"
@@ -164,16 +179,16 @@
               formControlName="instagram"
             />
           </div>
-          <div class="form-group col-xs-12 col-sm-4 col-md-3 col-sm-6">
+          <div class="form-group col-xs-12 col-sm-6">
             <label class="control-label">Otra Red Social</label>
             <input
               type="rrss"
               class="form-control"
               formControlName="rrss"
             />
-          </div>
+          </div> -->
 
-          <div class="form-group col-xs-12 col-sm-4 col-md-3 col-sm-6">
+          <div class="form-group col-xs-12 col-sm-6">
             <label class="control-label">Donde se entero?</label>
 
             <select
@@ -191,7 +206,7 @@
             </select>
           </div>
           <div
-            class="form-group col-xs-12 col-sm-4"
+            class="form-group col-xs-12 col-sm-6"
             id="otro"
             style="display: none"
           >
@@ -237,5 +252,7 @@
           
         />
       </form>
+      
+      </div>
     </div>
   </section>
