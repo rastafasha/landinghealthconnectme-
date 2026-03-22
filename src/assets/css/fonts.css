@@ -1,0 +1,76 @@
+/* Helvetica Neue LT Pro/Std Font Faces
+   Usage: Add to main.css: @import url('fonts.css');
+   Then use CSS vars like --font: 'HelveticaNeueLTPro-Th', 400 for thin, etc.
+   Supports all modern browsers + IE9+
+*/
+
+/* Thin */
+@font-face {
+  font-family: 'HelveticaNeueLTPro-Th';
+  src: local('Helvetica Neue Thin'),
+       local('HelveticaNeueLTPro-Th'),
+       url('../fonts/HelveticaNeueLTPro-Th.woff2') format('woff2'),
+       url('../fonts/HelveticaNeueLTPro-Th.woff') format('woff'),
+       url('../fonts/HelveticaNeueLTPro-Th.ttf') format('truetype'),
+       url('../fonts/HelveticaNeueLTPro-Th.eot?#iefix') format('embedded-opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Light */
+@font-face {
+  font-family: 'HelveticaNeueLTStd-Lt';
+  src: local('Helvetica Neue Light'),
+       local('HelveticaNeueLTStd-Lt'),
+       url('../fonts/HelveticaNeueLTStd-Lt.woff2') format('woff2'),
+       url('../fonts/HelveticaNeueLTStd-Lt.woff') format('woff'),
+       url('../fonts/HelveticaNeueLTStd-Lt.ttf') format('truetype'),
+       url('../fonts/HelveticaNeueLTStd-Lt.eot?#iefix') format('embedded-opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Roman / Regular */
+@font-face {
+  font-family: 'HelveticaNeueLTStd-Roman';
+  src: local('Helvetica Neue Roman'),
+       local('HelveticaNeueLTStd-Roman'),
+       url('../fonts/HelveticaNeueLTStd-Roman.woff2') format('woff2'),
+       url('../fonts/HelveticaNeueLTStd-Roman.woff') format('woff'),
+       url('../fonts/HelveticaNeueLTStd-Roman.ttf') format('truetype'),
+       url('../fonts/HelveticaNeueLTStd-Roman.eot?#iefix') format('embedded-opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Medium */
+@font-face {
+  font-family: 'HelveticaNeueLTPro-Md';
+  src: local('Helvetica Neue Medium'),
+       local('HelveticaNeueLTPro-Md'),
+       url('../fonts/HelveticaNeueLTPro-Md.woff2') format('woff2'),
+       url('../fonts/HelveticaNeueLTPro-Md.woff') format('woff'),
+       url('../fonts/HelveticaNeueLTPro-Md.ttf') format('truetype'),
+       url('../fonts/HelveticaNeueLTPro-Md.eot?#iefix') format('embedded-opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bold */
+@font-face {
+  font-family: 'HelveticaNeueLTStd-Bd';
+  src: local('Helvetica Neue Bold'),
+       local('HelveticaNeueLTStd-Bd'),
+       url('../fonts/HelveticaNeueLTStd-Bd.woff2') format('woff2'),
+       url('../fonts/HelveticaNeueLTStd-Bd.woff') format('woff'),
+       url('../fonts/HelveticaNeueLTStd-Bd.ttf') format('truetype'),
+       url('../fonts/HelveticaNeueLTStd-Bd.eot?#iefix') format('embedded-opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+

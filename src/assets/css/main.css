@@ -1,7 +1,7 @@
+@import url('fonts.css');
 @import url('style.css');
 /* @import url('component.css'); */
-/* @import url('font-awesome.css');
-@import url('font-awesome.min.css'); */
+/* @import url('font-awesome.css');\n@import url('font-awesome.min.css'); */
 @import url('normalize.css');
 
 
@@ -37,4 +37,10 @@
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#353888', endColorstr='#774477', GradientType=0);
     
+}
+h1,h2,h3, h4,h5{
+    font-family: 'HelveticaNeueLTStd-Bd';
+}
+p{
+    font-family: 'HelveticaNeueLTStd-Roman';
 }
