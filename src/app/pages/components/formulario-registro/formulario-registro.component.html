@@ -71,7 +71,7 @@
               </div>
             </div>
           </div>
-          <!-- <div class="form-group col-xs-12 col-sm-12">
+          <div class="form-group col-xs-12 col-sm-12">
             <label class="control-label">Especialidad</label>
             <input
               type="text"
@@ -79,15 +79,23 @@
               class="form-control"
               formControlName="speciality"
             />
-          </div> -->
-          <div class="form-group col-xs-12 col-sm-6">
+            <div class="text-danger">
+              <div *ngIf="appregistroForm.controls['speciality'].touched">
+                <span >información requerida.</span>
+              </div>
+              <div *ngIf="appregistroForm.controls['speciality'].errors?.['minlength']">
+                <span >3 caracteres mínimo.</span>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="form-group col-xs-12 col-sm-6">
             <label class="control-label">Tipo</label>
             <select class="form-control" formControlName="type_id"   >
               <option *ngFor="let data of types" [value]="data.id">
               {{data.name}}
               </option>
           </select>
-          </div>
+          </div> -->
 
           <div class="form-group col-xs-12 col-sm-6">
             <label class="control-label">Correo Electrónico</label>
@@ -140,12 +148,6 @@
               {{data.title}}
               </option>
               </select>
-            <!-- <input
-              type="text"
-              required="required"
-              class="form-control"
-              formControlName="pais"
-            /> -->
             <div class="text-danger">
               <div *ngIf="appregistroForm.controls['pais'].touched">
                 <span >información requerida.</span>
@@ -155,40 +157,7 @@
               </div>
             </div>
           </div>
-          <!-- <div class="form-group col-xs-12 col-sm-12">
-            <label class="control-label">Dirección Consultorio</label>
-            <textarea
-              formControlName="address"
-              class="form-control"
-              style="height: 120px"
-              required="required"
-            ></textarea>
-          </div> -->
-
-          <!-- <div class="form-group col-xs-12 col-sm-6">
-            <label class="control-label">Facebook (opcional)</label>
-            <input
-              type="text"
-              class="form-control"
-              formControlName="facebook"
-            />
-          </div>
-          <div class="form-group col-xs-12 col-sm-6">
-            <label class="control-label">Instagram (opcional)</label>
-            <input
-              type="text"
-              class="form-control"
-              formControlName="instagram"
-            />
-          </div>
-          <div class="form-group col-xs-12 col-sm-6">
-            <label class="control-label">Otra Red Social</label>
-            <input
-              type="rrss"
-              class="form-control"
-              formControlName="rrss"
-            />
-          </div> -->
+          
 
           <div class="form-group col-xs-12 col-sm-6">
             <label class="control-label">Donde se entero?</label>

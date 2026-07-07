@@ -2,10 +2,7 @@ export const environment = {
   production: true,
   //local
   // apiUrl: "http://127.0.0.1:8000/api",
-  // apiUrlMedia: "http://127.0.0.1:8000/storage/app/",
   //remoto
-  apiUrl: "https://admin.klyntic.com/backend-api-landing/public/api",
-  apiUrlMedia: "https://admin.klyntic.com/backend-api-landing/storage/app/",
-  // clientId: ''
+  apiUrl: "https://backend-crmklyntic-mean.onrender.com/api",
 
 };
