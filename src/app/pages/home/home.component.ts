@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
-import Swal from 'sweetalert2';
-import { RegistroLandingService } from 'src/app/services/registro-landing.service';
 
 @Component({
   selector: 'app-home',
@@ -12,14 +10,7 @@ export class HomeComponent {
 
   year: number = new Date().getFullYear();
 
-  
-
-  
-  
-  constructor(
-    
-    private fb: FormBuilder,
-  ) { }
+  constructor() { }
   
   ngOnInit(): void {
     window.scrollTo(0,0);
