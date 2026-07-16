@@ -4,7 +4,6 @@ import { Type } from 'src/app/models/type';
 import { PaisService } from 'src/app/services/pais.service';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import Swal from 'sweetalert2';
-import { RegistroLandingService } from 'src/app/services/registro-landing.service';
 import { DoctorService } from 'src/app/services/doctor.service';
 import { Pais } from 'src/app/models/pais.model';
 

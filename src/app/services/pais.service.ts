@@ -4,7 +4,7 @@ import { throwError, Observable, of } from 'rxjs';
 import  {catchError, map, tap} from 'rxjs/operators';
 import { Params, Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
-import { Pais } from '../models/pais';
+import { Pais } from '../models/pais.model';
 
 @Injectable({
   providedIn: 'root'
