@@ -10,7 +10,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PersonalComponent } from './personal/personal.component';
 import { FormularioRegistroComponent } from './formulario-registro/formulario-registro.component';
 import { SpaningComponent } from './spaning/spaning.component';
-
+import { RecursosVideosComponent } from './recursos-videos/recursos-videos.component';
+import { LoadingComponent } from './loading/loading.component';
+import { TestimoniosComponent } from './testimonios/testimonios.component';
+import { AlianzasComponent } from './alianzas/alianzas.component';
 
 
 @NgModule({
@@ -23,7 +26,11 @@ import { SpaningComponent } from './spaning/spaning.component';
     VideoComponent,
     PersonalComponent,
     FormularioRegistroComponent,
-    SpaningComponent
+    SpaningComponent,
+    RecursosVideosComponent,
+    LoadingComponent,
+    TestimoniosComponent,
+    AlianzasComponent
   ],
   exports: [
     ComentariosComponent,
@@ -34,7 +41,11 @@ import { SpaningComponent } from './spaning/spaning.component';
     VideoComponent,
     PersonalComponent,
     FormularioRegistroComponent,
-    SpaningComponent
+    SpaningComponent,
+    RecursosVideosComponent,
+    LoadingComponent,
+    TestimoniosComponent,
+    AlianzasComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,23 @@
+/* Placeholder circular para las iniciales del doctor */
+.avatar-placeholder {
+  width: 44px;
+  height: 44px;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+/* Efecto sutil de comillas itálicas para testimonios */
+.italic-quote {
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Elevación controlada al pasar el mouse por las tarjetas de testimonios */
+.custom-testimonial-card {
+  transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+}
+.custom-testimonial-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.05) !important;
+}

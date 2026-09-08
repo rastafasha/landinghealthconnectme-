@@ -46,7 +46,6 @@ export class FormularioRegistroComponent implements OnInit {
     this.paisService.getPaises().subscribe(
       (res: any) => {
         this.paises = res.paises;
-        console.log(res);
         error => this.error = error;
       }
     );

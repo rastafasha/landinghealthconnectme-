@@ -1,0 +1,20 @@
+/* Espaciado del título de marcas */
+.tracking-wider {
+  letter-spacing: 0.12em;
+}
+
+/* Efecto monocromático y discreto para los logos */
+.custom-client-logo {
+  max-height: 45px; /* Evita que un logo sea gigante y otro enano */
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.5;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Al pasar el mouse, el logo toma protagonismo */
+.custom-client-logo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
+}

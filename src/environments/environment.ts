@@ -6,9 +6,9 @@ export const environment = {
   production: false,
   //apirest local
   //apirest local
-  apiUrl: "http://localhost:3000/api",
+  // apiUrl: "http://localhost:3000/api",
   //remoto
-  // apiUrl: "https://backend-crmklyntic-mean.onrender.com/api",
+  apiUrl: "https://backend-crmklyntic-mean.onrender.com/api",
   
   // clientId: ''
 
