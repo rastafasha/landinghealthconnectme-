@@ -1,44 +1,163 @@
-.videoss{
-  background-color: #f2f2f2; /* Gris oscuro secundario */
+/* --- Contenedor Principal de la Sección de Videos (Actualizado a Modo Oscuro) --- */
+.videoss {
+  background-color: #000000; /* Fondo negro puro exterior estilo Apple */
   position: relative;
   overflow: hidden;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
   padding-top: 60px;
   padding-bottom: 60px;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
-/* Efecto sutil de elevación al pasar el mouse por la tarjeta */
-.hover-shadow {
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+/* Contenedor o botones individuales no activos (General, Odontología, etc.) */
+.videoss button, 
+.videoss .btn-filter { /* Ajusta según la clase exacta que uses en tus botones de arriba */
+  background-color: #161617 !important; /* Gris oscuro titanio */
+  color: #f5f5f7 !important; /* Texto blanco titanio limpio */
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 30px !important;
+  padding: 8px 20px !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
-.hover-shadow:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.08) !important;
+
+/* Efecto al pasar el mouse por encima de los filtros */
+.videoss button:hover {
+  background-color: #1e1e1f !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+}
+
+/* El botón activo o seleccionado (El que actualmente tienes negro como "Todos") */
+.videoss button.active,
+.videoss button:focus { /* O la clase activa que manejes en tu Angular */
+  background-color: #ffffff !important; /* Blanco puro de contraste inverso */
+  color: #000000 !important; /* Texto negro absoluto */
+  border-color: #ffffff !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Grilla de videos con espaciado controlado */
+.vid {
+  gap: 20px;
+}
+
+/* --- Tarjeta de Cristal Premium (Reemplaza .card y .hover-shadow) --- */
+.card {
+  background-color: #161617 !important; /* El gris oscuro base de las webs de Apple */
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 18px !important; /* Bordes más curvos y modernos tipo iOS */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4) !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Efecto de elevación al pasar el mouse por la tarjeta */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* --- Elementos de Texto Internos --- */
+.card-title {
+  color: #ffffff !important; /* Blanco titanio para alta legibilidad */
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.card-text {
+  color: #86868b !important; /* El gris lavado característico de Apple */
+  line-height: 1.4;
+}
+
+/* Separadores internos sutiles */
+.border-top.border-light {
+  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+.border-bottom.border-apple {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
 }
 
 
 
-/* Forzamos el tamaño y la prioridad del botón Play */
+/* --- Botón Play y Efectos de Escala (Tus estilos integrados) --- */
 .setup-play-btn {
   width: 54px !important;
   height: 54px !important;
   position: absolute !important;
   z-index: 9999 !important; /* Capa máxima para que nada lo tape */
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
-.card{
-  border-radius: 8px;
-}
-/* Efecto de agrandado al pasar el mouse por la tarjeta */
+
+/* Efecto de agrandado al pasar el mouse por la tarjeta completa */
 .card:hover .setup-play-btn {
   transform: translate(-50%, -50%) scale(1.15) !important;
 }
 
-/* Efecto de agrandado controlado al pasar el mouse */
+/* Efecto de agrandado controlado al pasar el mouse directo al botón */
 .hover-scale:hover {
   transform: translate(-50%, -50%) scale(1.1) !important;
 }
 
+/* --- Badges / Etiquetas de Categorías (Integradas a Modo Oscuro) --- */
+.badge {
+  font-size: 0.72rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.3px;
+  padding: 4px 12px !important;
+  border-radius: 20px !important;
+  display: inline-block;
+  border: 1px solid transparent !important;
+}
+
+.bg-success-subtle { background: rgba(39, 201, 63, 0.1) !important; color: #27c93f !important; border-color: rgba(39, 201, 63, 0.2) !important; }
+.bg-primary-subtle { background: rgba(0, 113, 227, 0.1) !important; color: #0071e3 !important; border-color: rgba(0, 113, 227, 0.2) !important; }
+.bg-purple-subtle  { background: rgba(155, 89, 182, 0.1) !important; color: #af7ac5 !important; border-color: rgba(155, 89, 182, 0.2) !important; }
+.bg-secondary-subtle { background: rgba(255, 255, 255, 0.05) !important; color: #aeaea3 !important; border-color: rgba(255, 255, 255, 0.1) !important; }
+
+/* --- Botones de Acción Estilo iOS --- */
+/* --- 1. BOTÓN VER VIDEO COMPLETO (Corregido para máxima legibilidad) --- */
+.btn-outline-primary {
+  background: transparent !important;
+  color: #0071e3 !important; /* Azul eléctrico de Apple */
+  border: 1px solid #0071e3 !important; /* Borde azul sólido, no translúcido */
+  border-radius: 30px !important;
+  font-size: 0.88rem !important;
+  font-weight: 600 !important; /* Letra más gruesa para que resalte en el fondo negro */
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 2px 8px rgba(0, 113, 227, 0.1) !important;
+}
+
+/* Efecto hover iluminado para el botón Ver Video */
+.btn-outline-primary:hover {
+  background: #0071e3 !important; /* Se llena por completo de azul */
+  color: #ffffff !important; /* El texto pasa a blanco puro */
+  box-shadow: 0 4px 15px rgba(0, 113, 227, 0.4) !important;
+}
+
+.btn-primary {
+  background-color: #0071e3 !important;
+  border-color: #0071e3 !important;
+  color: #ffffff !important;
+  border-radius: 30px !important;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s ease !important;
+}
+.btn-primary:hover {
+  background-color: #0077ed !important;
+  border-color: #0077ed !important;
+  transform: scale(1.01);
+}
+
+/* --- Control de Textos Largos (Tratamiento Clamping) --- */
 .text-truncate-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -53,27 +172,29 @@
   overflow: hidden;
 }
 
-/* Contenedor flexible para albergar videos con proporciones altas o cuadradas */
+/* --- Contenedor del Reproductor de Video Modal --- */
 .video-container-custom {
   position: relative;
-  height: 70vh; /* El video ocupará el 70% de la altura de la pantalla del usuario */
+  height: 70vh; /* El video ocupará el 70% de la altura de la pantalla */
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #000000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
 }
 
 /* Forzamos al iframe a llenar todo el alto y ancho dinámico */
 .custom-iframe-size {
   width: 100% !important;
   height: 100% !important;
-  object-fit: contain; /* Mantiene la proporción original del video sin estirarlo feo */
+  object-fit: contain; /* Mantiene la proporción original sin deformar el video */
 }
 
-/* Ajuste opcional para pantallas pequeñas/móviles */
+/* Ajuste responsivo para teléfonos móviles */
 @media (max-width: 768px) {
   .video-container-custom {
-    height: 50vh; /* En teléfonos reducimos la altura para que no corte el modal */
+    height: 50vh; /* Reducimos la altura en móviles para evitar cortes en el modal */
   }
 }
-
-
