@@ -8,7 +8,7 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 })
 export class HomeComponent {
 
-  year: number = new Date().getFullYear();
+  
 
   constructor() { }
   

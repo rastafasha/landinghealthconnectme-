@@ -1,0 +1,135 @@
+/* --- Contenedor Principal de la Sección --- */
+.apple-discover-section {
+    height: 80vh;
+    padding-top: 60px ;
+    background-color: #161617; /* El gris oscuro secundario que usa Apple en bloques de contraste */
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.apple-discover-content {
+    position: relative;
+    z-index: 5;
+}
+
+.badge-discover {
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    color: #86868b; /* Gris Apple */
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.discover-title {
+    font-size: calc(2.2rem + 1vw);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    background: linear-gradient(180deg, #ffffff 60%, #a1a1a6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.discover-desc {
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+.instagram-text {
+    font-size: 0.9rem;
+    color: #86868b;
+}
+
+/* --- Botón de Instagram Estilo iOS --- */
+.instagram-apple-btn {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.instagram-apple-btn i {
+    font-size: 1.3rem;
+}
+
+.instagram-apple-btn:hover {
+    background: #ffffff;
+    color: #000000;
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* --- Contenedor del Mockup de Pantalla (Look de Mac) --- */
+.apple-dashboard-wrapper {
+    position: relative;
+    display: block;
+    z-index: 2;
+    padding: 10px;
+}
+
+/* Resplandor trasero sutil */
+.dashboard-glow {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    background: radial-gradient(circle, rgba(0, 113, 227, 0.06) 0%, rgba(0,0,0,0) 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Simulación de Ventana de Aplicación macOS de Cristal */
+.dashboard-window {
+    background: #000000;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6), 
+                0 0 0 1px rgba(255, 255, 255, 0.08); /* Borde metálico fino */
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Cabecera de ventana Mac */
+.mac-header {
+    background-color: #1e1e1f;
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mac-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.mac-dot.red { background-color: #ff5f56; }
+.mac-dot.yellow { background-color: #ffbd2e; }
+.mac-dot.green { background-color: #27c93f; }
+
+.mac-title {
+    font-size: 0.75rem;
+    font-family: monospace;
+    letter-spacing: 0.5px;
+}
+
+/* Imagen fluida */
+.dashboard-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Efecto hover interactivo en la ventana */
+.apple-dashboard-wrapper:hover .dashboard-window {
+    transform: translateY(-6px) rotateX(1deg) rotateY(-1deg);
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.7), 
+                0 0 0 1px rgba(255, 255, 255, 0.15);
+}

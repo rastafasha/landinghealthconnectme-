@@ -1,48 +1,172 @@
-.formulario{
+/* --- Contenedor Principal de Registro --- */
+.apple-register-wrapper {
+    background-color: #000000; /* Fondo negro puro exterior */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Tarjeta de Cristal (Maneja el contenedor de todo el formulario) */
+.apple-glass-card {
+    background: #161617; /* El gris oscuro base de Apple */
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+}
+
+/* Resplandor sutil trasero */
+.register-glow {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(0, 113, 227, 0.08) 0%, rgba(0,0,0,0) 70%);
+    top: -50px;
+    left: -50px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Etiqueta superior */
+.badge-apple-trial {
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    color: #0071e3; /* Azul Apple */
+    font-weight: 600;
+    display: inline-block;
+}
+
+/* Títulos con degradado de luz */
+.text-gradient-apple {
+    background: linear-gradient(180deg, #ffffff 40%, #ceced2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.brand-gradient {
+    background: linear-gradient(135deg, #0071e3 0%, #00bfff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+.text-apple-muted {
+    color: #86868b !important;
+}
+
+/* --- Cápsula de Beneficio Estilo iOS --- */
+.apple-benefit-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    position: relative;
+    z-index: 5;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.icon-benefit-box {
+    color: #0071e3;
+    background: rgba(0, 113, 227, 0.1);
+    padding: 10px;
+    border-radius: 12px;
     display: flex;
-    padding: 20px;
-    padding-bottom: 60px;
-}
-.text-primary-gradient {
-  background: linear-gradient(45deg, #6366f1, #a855f7);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    align-items: center;
+    justify-content: center;
 }
 
-.rounded-4 {
-  border-radius: 1.25rem !important;
+/* Efecto interactivo al pasar por encima */
+.apple-benefit-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(0, 113, 227, 0.3);
 }
 
-.custom-input {
-  border: 1px solid #e2e8f0 !important;
-  background-color: #f8fafc !important;
-  transition: all 0.2s ease-in-out !important;
+
+
+/* --- Estilos del Formulario Apple Pro --- */
+
+.text-apple-label {
+    color: #e1e1e6; /* Blanco titanio sutil para etiquetas */
+    letter-spacing: -0.01em;
 }
 
-.custom-input:focus {
-  background-color: #ffffff !important;
-  border-color: #6366f1 !important;
-  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15) !important;
+.text-apple-muted-label {
+    color: #86868b; /* Gris Apple para los textos secundarios del checkbox */
 }
 
-.custom-checkbox {
-  cursor: pointer;
-  width: 1.15em;
-  height: 1.15em;
+.text-apple-blue-link {
+    color: #0071e3;
+    transition: color 0.2s;
+}
+.text-apple-blue-link:hover {
+    color: #0077ed;
+    text-decoration: underline !important;
 }
 
-.hover-lift {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+/* Cajas de texto y selectores oscuros estilo iOS */
+.apple-input {
+    background-color: #000000 !important; /* Fondo negro puro interno */
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    color: #f5f5f7 !important;
+    transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-.hover-lift:hover:not([disabled]) {
-  transform: translateY(-2px);
-  box-shadow: 0 0.5rem 1rem rgba(99, 102, 241, 0.25) !important;
+/* Marcadores de posición gris suave */
+.apple-input::placeholder {
+    color: rgba(255, 255, 255, 0.3) !important;
 }
 
-/* Estilo para cuando el botón está deshabilitado por validación */
-button[disabled] {
-  cursor: not-allowed;
-  opacity: 0.65;
+/* Efecto de foco eléctrico azul de Apple */
+.apple-input:focus {
+    border-color: #0071e3 !important;
+    box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.2) !important;
+    outline: none !important;
+}
+
+/* Estilo para los elementos select dentro de modo oscuro */
+select.apple-input option {
+    background-color: #161617;
+    color: #f5f5f7;
+}
+
+/* --- Checkbox Personalizado --- */
+.apple-checkbox {
+    background-color: #000000 !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+.apple-checkbox:checked {
+    background-color: #0071e3 !important;
+    border-color: #0071e3 !important;
+}
+
+/* --- Botón de Envío Premium (Cápsula Plana) --- */
+.btn-apple-submit {
+    background-color: #0071e3;
+    color: #ffffff;
+    font-size: 1.05rem;
+    border: none;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-apple-submit:hover:not([disabled]) {
+    background-color: #0077ed;
+    transform: scale(1.015);
+    box-shadow: 0 10px 24px rgba(0, 113, 227, 0.25);
+}
+
+/* Estado Deshabilitado Estilo Apple (Gris Oscuro Apagado) */
+.btn-apple-submit:disabled {
+    background-color: rgba(255, 255, 255, 0.04) !important;
+    color: rgba(255, 255, 255, 0.2) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    cursor: not-allowed;
+}
+
+/* --- Animación de Alerta de Errores Sutil --- */
+.animate-error {
+    animation: appleShake 0.4s ease-in-out;
+}
+
+@keyframes appleShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    75% { transform: translateX(4px); }
 }
 

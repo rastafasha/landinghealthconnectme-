@@ -1,3 +1,13 @@
+
+.testimoni{
+  background-color: #f8f9fa; /* Gris claro */
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
 /* Placeholder circular para las iniciales del doctor */
 .avatar-placeholder {
   width: 44px;
@@ -15,6 +25,7 @@
 
 /* Elevación controlada al pasar el mouse por las tarjetas de testimonios */
 .custom-testimonial-card {
+  border-radius: 8px;
   transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
 }
 .custom-testimonial-card:hover {

@@ -1,0 +1,211 @@
+.apple-page {
+    --bg-dark: #000000;
+    --bg-elevated: #161617;
+    --text-light: #f5f5f7;
+    --text-muted: #86868b;
+    --apple-blue: #0071e3;
+    
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    overflow-x: hidden;
+}
+
+/* --- Hero Global --- */
+.hero-global {
+    height: 100vh;
+    /* min-height: 50vh; */
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glow-effect {
+    position: absolute;
+    width: 600px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(0, 113, 227, 0.15) 0%, rgba(0,0,0,0) 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.badge-apple {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: var(--apple-blue);
+    font-weight: 600;
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+.main-title {
+    font-size: calc(3.5rem + 2vw);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin-bottom: 10px;
+}
+
+.main-subtitle {
+    font-size: calc(1.1rem + 0.3vw);
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+/* --- Estructura de Bloques de Producto (Estilo Apple) --- */
+.product-section {
+    padding: 80px 20px;
+    border-bottom: 12px solid var(--bg-dark); /* Separador limpio entre bloques */
+}
+
+/* Bloque Klyntic Pro (Fondo Gris Claro Elevado) */
+.pro-section {
+    background-color: var(--bg-elevated);
+}
+
+.product-title {
+    font-size: calc(2.2rem + 1.5vw);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+}
+
+.product-tagline {
+    font-size: calc(1.1rem + 0.2vw);
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.product-description {
+    max-width: 600px;
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+/* --- Botones y Enlaces Apple --- */
+.btn-apple-blue {
+    background-color: var(--apple-blue);
+    color: #ffffff;
+    padding: 10px 24px;
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: all 0.2s ease;
+}
+
+.btn-apple-blue:hover {
+    background-color: #0077ed;
+    transform: scale(1.02);
+    color: #ffffff;
+}
+
+.link-apple {
+    color: var(--apple-blue);
+    text-decoration: none;
+    font-size: 1.05rem;
+}
+
+.link-apple:hover {
+    text-decoration: underline;
+}
+
+.link-apple .chevron {
+    font-size: 0.85rem;
+    margin-left: 4px;
+    transition: transform 0.2s;
+}
+
+.link-apple:hover .chevron {
+    transform: translateX(3px);
+}
+
+/* Bloque Klyntic Enterprise (Negro Absoluto con Degradado Metálico) */
+.enterprise-section {
+    background-color: #050505;
+    position: relative;
+}
+
+.enterprise-glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(161, 161, 166, 0.05) 0%, rgba(0,0,0,0) 65%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.badge-enterprise {
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    color: #f5f5f7;
+    background-color: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    display: inline-block;
+}
+
+.enterprise-gradient {
+    background: linear-gradient(180deg, #ffffff 40%, #86868b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.logo-animation-container {
+    perspective: 1000px;
+    display: inline-block;
+}
+
+.apple-animated-logo {
+    display: inline-block;
+    font-size: calc(4rem + 3vw); /* Tamaño gigante inicial si es texto */
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    
+    /* Inicializamos las propiedades para la animación */
+    opacity: 0;
+    transform: scale(2.5); /* Empieza muy grande, al frente del usuario */
+    
+    /* Configuración de la animación estilo Apple */
+    animation: appleZoomIn 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* --- Animaciones de Escala (Cubic Bezier para suavidad) --- */
+@keyframes appleZoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(3.5) translateY(-20px);
+        filter: blur(8px); /* Efecto sutil de desenfoque al estar muy cerca */
+    }
+    40% {
+        opacity: 0.8;
+        filter: blur(0px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0); /* Llega a su tamaño real y se detiene */
+    }
+}
+
+/* --- Animación de entrada retrasada para el texto inferior --- */
+.animate-fade-in-delayed {
+    opacity: 0;
+    animation: appleFadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 0.8s; /* Espera a que el logo termine de bajar para aparecer */
+}
+
+@keyframes appleFadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

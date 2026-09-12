@@ -14,6 +14,10 @@ import { RecursosVideosComponent } from './recursos-videos/recursos-videos.compo
 import { LoadingComponent } from './loading/loading.component';
 import { TestimoniosComponent } from './testimonios/testimonios.component';
 import { AlianzasComponent } from './alianzas/alianzas.component';
+import { EnterpriseComponent } from './enterprise/enterprise.component';
+import { ApplepageComponent } from './applepage/applepage.component';
+import { HerosectionComponent } from './herosection/herosection.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -30,7 +34,11 @@ import { AlianzasComponent } from './alianzas/alianzas.component';
     RecursosVideosComponent,
     LoadingComponent,
     TestimoniosComponent,
-    AlianzasComponent
+    AlianzasComponent,
+    EnterpriseComponent,
+    ApplepageComponent,
+    HerosectionComponent,
+    FooterComponent
   ],
   exports: [
     ComentariosComponent,
@@ -45,7 +53,11 @@ import { AlianzasComponent } from './alianzas/alianzas.component';
     RecursosVideosComponent,
     LoadingComponent,
     TestimoniosComponent,
-    AlianzasComponent
+    AlianzasComponent,
+    EnterpriseComponent,
+     ApplepageComponent,
+     HerosectionComponent,
+     FooterComponent
   ],
   imports: [
     CommonModule,

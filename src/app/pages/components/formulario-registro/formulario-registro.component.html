@@ -1,39 +1,43 @@
-<div class="container py-5">
-  <div class="bg-white rounded-4 shadow-sm border border-light p-4 p-md-5">
+<div class=" py-5 apple-register-wrapper" id="register">
+  <!-- Tarjeta contenedora de cristal oscuro que envolverá a ambas columnas -->
+  <div class="apple-glass-card rounded-4 p-4 p-md-5">
     <div class="row g-5 align-items-center">
 
-      <!-- COLUMNA IZQUIERDA: DISEÑO DE PROPUESTA DE VALOR -->
-      <div class="col-lg-5 text-center text-lg-start">
-        <span
-          class="badge bg-primary-subtle text-primary rounded-pill px-3 py-2 fw-semibold mb-3 text-uppercase tracking-wider">
+      <!-- COLUMNA IZQUIERDA: DISEÑO DE PROPUESTA DE VALOR APPLE PRO -->
+      <div class="col-lg-5 text-center text-lg-start position-relative">
+        <div class="register-glow"></div>
+        
+        <span class="badge-apple-trial text-uppercase mb-3">
           Prueba Gratuita
         </span>
-        <h2 class="display-5 fw-bold text-dark tracking-tight mb-3">
-          EXPLORA. <span class="text-primary-gradient">KLYNTIC</span> EN ACCIÓN.
+        
+        <h2 class="display-6 fw-bold text-white tracking-tight mb-3 text-gradient-apple">
+          EXPLORA. <span class="brand-gradient">KLYNTIC</span> EN ACCIÓN.
         </h2>
-        <p class="text-secondary fs-5 lh-base mb-4">
+        
+        <p class="text-apple-muted fs-5 lh-base mb-4">
           Le ayudaremos con la implementación del programa, facilitándole todo lo necesario para maximizar y
           organizar su consulta médica. Active su periodo de prueba por 7 días.
         </p>
 
-        <!-- Tarjeta de beneficio clave para el Médico -->
-        <div class="d-flex align-items-center bg-light p-3 rounded-3 border-start border-primary border-4 shadow-sm">
-          <div class="text-primary me-3">
-            <svg xmlns="http://w3.org" width="32" height="32" fill="currentColor" class="bi bi-rocket-takeoff-fill"
-              viewBox="0 0 16 16">
-              <path
-                d="M12.17 2.03a1.75 1.75 0 0 0-2.477 0L8.232 3.492 4.117 7.608c-.732.732-.98 1.812-.628 2.723l-.116.116a.75.75 0 0 0 .04 1.107l1.01 1.01a.75.75 0 0 0 1.107.04l.116-.116c.91.352 1.99.104 2.723-.628l4.116-4.117 1.462-1.461a1.75 1.75 0 0 0 0-2.477z" />
+        <!-- Tarjeta de beneficio clave estilo cápsula iOS -->
+        <div class="d-flex align-items-center apple-benefit-card p-3 rounded-4 shadow-sm">
+          <div class="icon-benefit-box me-3">
+            <!-- Icono SVG optimizado (con el xmlns corregido) -->
+            <svg xmlns="http://w3.org" width="22" height="22" fill="currentColor" class="bi bi-rocket-takeoff-fill" viewBox="0 0 16 16">
+              <path d="M12.17 2.03a1.75 1.75 0 0 0-2.477 0L8.232 3.492 4.117 7.608c-.732.732-.98 1.812-.628 2.723l-.116.116a.75.75 0 0 0 .04 1.107l1.01 1.01a.75.75 0 0 0 1.107.04l.116-.116c.91.352 1.99.104 2.723-.628l4.116-4.117 1.462-1.461a1.75 1.75 0 0 0 0-2.477z" />
               <path d="M4.646 11.354l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 0-.708l1.5-1.5 1.208 1.208z" />
             </svg>
           </div>
           <div>
-            <h6 class="fw-bold text-dark m-0">Acceso Completo</h6>
-            <p class="text-muted small m-0">Pruebe las herramientas que Klyntic le ofrece.</p>
+            <h6 class="fw-bold text-white m-0">Acceso Completo</h6>
+            <p class="text-apple-muted small m-0">Pruebe todas las herramientas profesionales que Klyntic le ofrece.</p>
           </div>
         </div>
       </div>
 
-      <!-- COLUMNA DERECHA: TU FORMULARIO CON LA LOGICA DE ANGULAR -->
+
+         <!-- COLUMNA DERECHA: TU FORMULARIO CON LA LOGICA DE ANGULAR APPLE PRO -->
       <div class="col-lg-7">
         <form [formGroup]="appregistroForm" (ngSubmit)="guardarPerfil()" id="myForm" role="form" name="registro"
           data-toggle="validator" method="post" accept-charset="utf-8">
@@ -41,52 +45,47 @@
 
             <!-- Nombre -->
             <div class="col-md-6">
-              <label class="form-label small fw-semibold text-secondary">Nombre</label>
-              <input type="text" required="required" class="form-control custom-input py-2.5 rounded-3"
+              <label class="form-label small fw-medium text-apple-label">Nombre</label>
+              <input type="text" required="required" class="form-control apple-input py-2.5 rounded-3"
                 formControlName="nombre" />
               <!-- Validaciones estéticas -->
-              <div class="text-danger small mt-1"
+              <div class="text-danger small mt-1 animate-error"
                 *ngIf="appregistroForm.controls['nombre'].invalid && (appregistroForm.controls['nombre'].dirty || appregistroForm.controls['nombre'].touched)">
-                <div *ngIf="appregistroForm.controls['nombre'].errors?.['required']">Información requerida.
-                </div>
+                <div *ngIf="appregistroForm.controls['nombre'].errors?.['required']">Información requerida.</div>
                 <div *ngIf="appregistroForm.controls['nombre'].errors?.['minlength']">3 caracteres mínimo.</div>
               </div>
             </div>
 
             <!-- Apellido -->
             <div class="col-md-6">
-              <label class="form-label small fw-semibold text-secondary">Apellido</label>
-              <input type="text" required="required" class="form-control custom-input py-2.5 rounded-3"
+              <label class="form-label small fw-medium text-apple-label">Apellido</label>
+              <input type="text" required="required" class="form-control apple-input py-2.5 rounded-3"
                 formControlName="apellido" />
-              <div class="text-danger small mt-1"
+              <div class="text-danger small mt-1 animate-error"
                 *ngIf="appregistroForm.controls['apellido'].invalid && (appregistroForm.controls['apellido'].dirty || appregistroForm.controls['apellido'].touched)">
-                <div *ngIf="appregistroForm.controls['apellido'].errors?.['required']">Información requerida.
-                </div>
-                <div *ngIf="appregistroForm.controls['apellido'].errors?.['minlength']">3 caracteres mínimo.
-                </div>
+                <div *ngIf="appregistroForm.controls['apellido'].errors?.['required']">Información requerida.</div>
+                <div *ngIf="appregistroForm.controls['apellido'].errors?.['minlength']">3 caracteres mínimo.</div>
               </div>
             </div>
 
             <!-- Especialidad -->
             <div class="col-12">
-              <label class="form-label small fw-semibold text-secondary">Especialidad</label>
-              <input type="text" required="required" class="form-control custom-input py-2.5 rounded-3"
+              <label class="form-label small fw-medium text-apple-label">Especialidad</label>
+              <input type="text" required="required" class="form-control apple-input py-2.5 rounded-3"
                 formControlName="speciality" placeholder="Ej. Odontología, Pediatría, Medicina General..." />
-              <div class="text-danger small mt-1"
+              <div class="text-danger small mt-1 animate-error"
                 *ngIf="appregistroForm.controls['speciality'].invalid && (appregistroForm.controls['speciality'].dirty || appregistroForm.controls['speciality'].touched)">
-                <div *ngIf="appregistroForm.controls['speciality'].errors?.['required']">Información requerida.
-                </div>
-                <div *ngIf="appregistroForm.controls['speciality'].errors?.['minlength']">3 caracteres mínimo.
-                </div>
+                <div *ngIf="appregistroForm.controls['speciality'].errors?.['required']">Información requerida.</div>
+                <div *ngIf="appregistroForm.controls['speciality'].errors?.['minlength']">3 caracteres mínimo.</div>
               </div>
             </div>
 
             <!-- Correo Electrónico -->
             <div class="col-md-6">
-              <label class="form-label small fw-semibold text-secondary">Correo Electrónico</label>
-              <input type="email" required="required" class="form-control custom-input py-2.5 rounded-3"
+              <label class="form-label small fw-medium text-apple-label">Correo Electrónico</label>
+              <input type="email" required="required" class="form-control apple-input py-2.5 rounded-3"
                 formControlName="email" placeholder="ejemplo@doctor.com" />
-              <div class="text-danger small mt-1"
+              <div class="text-danger small mt-1 animate-error"
                 *ngIf="appregistroForm.controls['email'].invalid && (appregistroForm.controls['email'].dirty || appregistroForm.controls['email'].touched)">
                 <div *ngIf="appregistroForm.controls['email'].errors?.['required']">Información requerida.</div>
                 <div *ngIf="appregistroForm.controls['email'].errors?.['minlength']">3 caracteres mínimo.</div>
@@ -95,10 +94,10 @@
 
             <!-- Celular -->
             <div class="col-md-6">
-              <label class="form-label small fw-semibold text-secondary">Celular</label>
-              <input type="text" required="phone" class="form-control custom-input py-2.5 rounded-3"
+              <label class="form-label small fw-medium text-apple-label">Celular</label>
+              <input type="text" required="phone" class="form-control apple-input py-2.5 rounded-3"
                 formControlName="phone" placeholder="Ej. +58 412-0000000" />
-              <div class="text-danger small mt-1"
+              <div class="text-danger small mt-1 animate-error"
                 *ngIf="appregistroForm.controls['phone'].invalid && (appregistroForm.controls['phone'].dirty || appregistroForm.controls['phone'].touched)">
                 <div *ngIf="appregistroForm.controls['phone'].errors?.['required']">Información requerida.</div>
                 <div *ngIf="appregistroForm.controls['phone'].errors?.['minlength']">3 caracteres mínimo.</div>
@@ -107,20 +106,20 @@
 
             <!-- Ciudad -->
             <div class="col-md-6">
-              <label class="form-label small fw-semibold text-secondary">Ciudad</label>
-              <input type="text" required="required" class="form-control custom-input py-2.5 rounded-3"
+              <label class="form-label small fw-medium text-apple-label">Ciudad</label>
+              <input type="text" required="required" class="form-control apple-input py-2.5 rounded-3"
                 formControlName="ciudad" placeholder="Ej. Caracas" />
             </div>
 
             <!-- País -->
             <div class="col-md-6">
-              <label class="form-label small fw-semibold text-secondary">País</label>
-              <select class="form-select custom-input py-2.5 rounded-3" formControlName="pais">
+              <label class="form-label small fw-medium text-apple-label">País</label>
+              <select class="form-select apple-input py-2.5 rounded-3" formControlName="pais">
                 <option *ngFor="let data of paises" [value]="data._id">
                   {{data.pais}}
                 </option>
               </select>
-              <div class="text-danger small mt-1"
+              <div class="text-danger small mt-1 animate-error"
                 *ngIf="appregistroForm.controls['pais'].invalid && (appregistroForm.controls['pais'].dirty || appregistroForm.controls['pais'].touched)">
                 <div *ngIf="appregistroForm.controls['pais'].errors?.['required']">Información requerida.</div>
                 <div *ngIf="appregistroForm.controls['pais'].errors?.['minlength']">3 caracteres mínimo.</div>
@@ -129,8 +128,8 @@
 
             <!-- Dónde se enteró -->
             <div class="col-md-6">
-              <label class="form-label small fw-semibold text-secondary">¿Dónde se enteró?</label>
-              <select formControlName="dondeSeEntero" id="input" class="form-select custom-input py-2.5 rounded-3"
+              <label class="form-label small fw-medium text-apple-label">¿Dónde se enteró?</label>
+              <select formControlName="dondeSeEntero" id="input" class="form-select apple-input py-2.5 rounded-3"
                 required="required" onChange="mostrar(this.value);">
                 <option value="">Seleccione</option>
                 <option value="Facebook">Facebook</option>
@@ -142,8 +141,8 @@
 
             <!-- Campo Condicional "Otro" -->
             <div class="col-md-6" id="otro" style="display: none">
-              <label class="form-label small fw-semibold text-secondary">¿Cómo, Dónde, Quién?</label>
-              <input type="text" class="form-control custom-input py-2.5 rounded-3" formControlName="dondeSeEntero"
+              <label class="form-label small fw-medium text-apple-label">¿Cómo, Dónde, Quién?</label>
+              <input type="text" class="form-control apple-input py-2.5 rounded-3" formControlName="dondeSeEntero"
                 placeholder="Especifique aquí..." />
             </div>
 
@@ -151,10 +150,10 @@
             <div class="col-12 mt-3">
               <div class="form-check d-flex align-items-center">
                 <input id="checkbox-signup" formControlName="terminos" name="terminos" type="checkbox"
-                  required="required" class="form-check-input me-2 custom-checkbox" />
-                <label for="checkbox-signup" class="form-check-label small text-muted">
+                  required="required" class="form-check-input me-2 apple-checkbox" />
+                <label for="checkbox-signup" class="form-check-label small text-apple-muted-label">
                   Acepto los <a href="javascript:void(0)" data-toggle="modal" data-target="#staticBackdrop"
-                    class="text-primary text-decoration-none fw-medium">Términos y Condiciones</a>
+                    class="text-apple-blue-link text-decoration-none fw-medium">Términos y Condiciones</a>
                 </label>
               </div>
             </div>
@@ -162,10 +161,10 @@
             <!-- Campo Oculto del ID -->
             <input type="hidden" formControlName="id" />
 
-            <!-- Botón de Envío Dominante -->
+            <!-- Botón de Envío Dominante Estilo Apple -->
             <div class="col-12 mt-4">
               <button type="submit" [disabled]="appregistroForm.invalid"
-                class="btn btn-primary w-100 py-3 fw-bold rounded-3 shadow-sm transition-all hover-lift">
+                class="btn btn-apple-submit w-100 py-3 fw-medium rounded-pill shadow-sm">
                 Registrarme
               </button>
             </div>
