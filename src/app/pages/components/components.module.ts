@@ -18,6 +18,7 @@ import { EnterpriseComponent } from './enterprise/enterprise.component';
 import { ApplepageComponent } from './applepage/applepage.component';
 import { HerosectionComponent } from './herosection/herosection.component';
 import { FooterComponent } from './footer/footer.component';
+import { CuadrobeneficiosComponent } from './cuadrobeneficios/cuadrobeneficios.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { FooterComponent } from './footer/footer.component';
     EnterpriseComponent,
     ApplepageComponent,
     HerosectionComponent,
-    FooterComponent
+    FooterComponent,
+    CuadrobeneficiosComponent
   ],
   exports: [
     ComentariosComponent,
@@ -57,7 +59,8 @@ import { FooterComponent } from './footer/footer.component';
     EnterpriseComponent,
      ApplepageComponent,
      HerosectionComponent,
-     FooterComponent
+     FooterComponent,
+     CuadrobeneficiosComponent
   ],
   imports: [
     CommonModule,
