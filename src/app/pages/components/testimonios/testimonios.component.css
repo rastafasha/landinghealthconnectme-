@@ -1,34 +1,91 @@
-
-.testimoni{
-  background-color: #f8f9fa; /* Gris claro */
-  position: relative;
-  overflow: hidden;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-/* Placeholder circular para las iniciales del doctor */
-.avatar-placeholder {
-  width: 44px;
-  height: 44px;
-  font-size: 0.85rem;
-  flex-shrink: 0;
+/* --- Contenedor General de Testimonios --- */
+.apple-testimonials-section {
+    background-color: #000000; /* Fondo negro absoluto continuo */
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    position: relative;
+    overflow: hidden;
 }
 
-/* Efecto sutil de comillas itálicas para testimonios */
-.italic-quote {
-  font-style: italic;
-  font-size: 0.95rem;
-  line-height: 1.6;
+/* Resplandor de fondo ultra sutil para dar ambiente de software */
+.testimonials-glow {
+    position: absolute;
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(155, 89, 182, 0.03) 0%, rgba(0,0,0,0) 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 1;
 }
 
-/* Elevación controlada al pasar el mouse por las tarjetas de testimonios */
-.custom-testimonial-card {
-  border-radius: 8px;
-  transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+.badge-testimonials {
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    color: #0071e3; /* Azul Apple */
+    font-weight: 600;
+    display: inline-block;
 }
-.custom-testimonial-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.05) !important;
+
+.testimonials-main-title {
+    font-size: calc(2rem + 0.6vw);
+    font-weight: 700;
+    letter-spacing: -0.02em;
 }
+
+.testimonials-subtitle {
+    font-size: 1.05rem;
+    color: #86868b !important;
+}
+
+/* --- Tarjetas de Cristal Oscuro (Glassmorphism) --- */
+.apple-testimonial-card {
+    background-color: #161617 !important; /* Gris titanio de Apple */
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5) !important;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.apple-testimonial-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Texto de la cita con tipografía clara y limpia */
+.testimonial-body-text {
+    color: #ceced2 !important;
+    font-size: 0.98rem;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+/* Separador interno de la tarjeta */
+.border-top-apple {
+    border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* --- Avatares con Iniciales Estilizados --- */
+.avatar-apple {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 14px;
+    flex-shrink: 0; /* Evita que el círculo se deforme */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Iniciales moradas integradas */
+.text-purple { color: #af7ac5 !important; }
+.bg-purple-subtle { background: rgba(155, 89, 182, 0.1) !important; }
+
+/* Iniciales azules integradas */
+.text-primary { color: #0071e3 !important; }
+.bg-primary-subtle { background: rgba(0, 113, 227, 0.1) !important; }
