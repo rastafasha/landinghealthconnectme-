@@ -1,6 +1,7 @@
 /* --- Contenedor Principal de la Sección --- */
 .apple-discover-section {
-    height: 80vh;
+    height: auto;
+    min-height: 80vh;
     padding-top: 60px ;
     background-color: #161617; /* El gris oscuro secundario que usa Apple en bloques de contraste */
     position: relative;
