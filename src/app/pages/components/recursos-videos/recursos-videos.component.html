@@ -1,5 +1,6 @@
 <div class=" py-5 videoss">
-  <!-- Encabezado de la sección -->
+ <div class="container">
+   <!-- Encabezado de la sección -->
   <div class="row justify-content-center text-center mb-5">
     <div class="col-md-8">
       <h2 class="display-5 fw-bold text-dark mb-3">
@@ -12,8 +13,8 @@
       <!-- Filtros por categoría con Botones Bootstrap -->
       <div class="d-flex flex-wrap justify-content-center gap-5 mt-4">
         <button *ngFor="let cat of categorias" (click)="filtrarPor(cat.value)"
-          [ngClass]="categoriaActiva === cat.value ? 'btn-primary' : 'btn-light border'"
-          class="btn rounded-pill px-4 shadow-sm transition">
+          [ngClass]="categoriaActiva === cat.value ? 'btn-dark' : 'btn-light border'"
+          class="btn rounded-pill px-4 shadow-sm transition gap-2">
           {{ cat.label }}
         </button>
       </div>
@@ -24,30 +25,6 @@
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
     <div *ngFor="let item of recursosFiltrados" class="col">
       <div class="card h-100 shadow-sm border-light hover-shadow transition-all overflow-hidden">
-
-        <!-- CONTENEDOR DE PREVISUALIZACIÓN CORREGIDO CON CLASE PADRE RELATIVE -->
-        <div *ngIf="item.tipo === 'video'" (click)="abrirModalVideo(item)" class="position-relative w-100"
-          style="cursor: pointer;">
-
-          <!-- Caja del video de fondo -->
-          <div class="ratio ratio-16x9 bg-dark rounded-top">
-            <div class="w-100 h-100 d-flex align-items-center justify-content-center bg-secondary">
-              <span class="text-white opacity-75 fw-semibold small">Ver Demostración</span>
-            </div>
-          </div>
-
-          <!-- EL BOTÓN PLAY: Ahora con las clases de Bootstrap z-3 (Traer al frente) y position-absolute -->
-          <!-- <div
-            class="position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center bg-primary text-white rounded-circle shadow-lg z-3 setup-play-btn">
-            <svg xmlns="http://w3.org" width="24" height="24" fill="currentColor" class="bi bi-play-fill ms-1"
-              viewBox="0 0 16 16">
-              <path
-                d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
-            </svg>
-          </div> -->
-        </div>
-
-
         <!-- Si el recurso es un BANNER/IMAGEN -->
         <div *ngIf="item.tipo === 'banner'" class="ratio ratio-16x9 bg-light overflow-hidden">
           <img [src]="item.urlMedia" [alt]="item.titulo" class="img-fluid object-fit-cover w-full h-full" />
@@ -130,4 +107,5 @@
   <div *ngIf="recursosFiltrados.length === 0 && !isLoading" class="text-center py-5">
     <p class="text-muted fs-5">No hay contenidos disponibles en esta categoría por el momento.</p>
   </div>
+ </div>
 </div>

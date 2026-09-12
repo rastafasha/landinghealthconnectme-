@@ -26,7 +26,9 @@
   z-index: 9999 !important; /* Capa máxima para que nada lo tape */
   transition: transform 0.2s ease-in-out;
 }
-
+.card{
+  border-radius: 8px;
+}
 /* Efecto de agrandado al pasar el mouse por la tarjeta */
 .card:hover .setup-play-btn {
   transform: translate(-50%, -50%) scale(1.15) !important;
