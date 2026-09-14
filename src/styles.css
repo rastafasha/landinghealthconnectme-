@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* 🚀 EFECTO GLOBAL DE REVELADO CON SCROLL NATIVO */
+.reveal-scroll-nativo {
+    /* Vinculamos la animación al ciclo de vida del scroll visual */
+    animation: revealEffect linear both;
+    animation-timeline: view();
+    
+    /* Rango de animación: Empieza cuando el elemento entra un 10% 
+       en pantalla y se completa cuando cubre el 40% */
+    animation-range: entry 10% cover 40%; 
+}
+
+@keyframes revealEffect {
+    from { 
+        opacity: 0;
+        transform: translateY(60px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
