@@ -1,0 +1,10 @@
+/* Ocultamos los bloques inicialmente para que la subida sea dramática y premium */
+.animar-scroll {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+/* Cuando el IntersectionObserver inyecta las clases de tu archivo, forzamos opacidad 1 */
+.animar-scroll.animated.fadeInUp {
+  opacity: 1;
+}
