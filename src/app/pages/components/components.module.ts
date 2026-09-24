@@ -19,6 +19,13 @@ import { ApplepageComponent } from './applepage/applepage.component';
 import { HerosectionComponent } from './herosection/herosection.component';
 import { FooterComponent } from './footer/footer.component';
 import { CuadrobeneficiosComponent } from './cuadrobeneficios/cuadrobeneficios.component';
+import { KlynticExpressComponent } from './klyntic-express/klyntic-express.component';
+import { KlynticHeroComponent } from './klyntic-hero/klyntic-hero.component';
+import { KlynticProComponent } from './klyntic-pro/klyntic-pro.component';
+import { KlynticEnterpriseComponent } from './klyntic-enterprise/klyntic-enterprise.component';
+import { KlynticExpvschatbotComponent } from './klyntic-expvschatbot/klyntic-expvschatbot.component';
+import { KlynticExpFunnelCrecimientoComponent } from './klyntic-exp-funnel-crecimiento/klyntic-exp-funnel-crecimiento.component';
+import { PipesModule } from 'src/app/pipes/pipes.module';
 
 
 @NgModule({
@@ -40,7 +47,13 @@ import { CuadrobeneficiosComponent } from './cuadrobeneficios/cuadrobeneficios.c
     ApplepageComponent,
     HerosectionComponent,
     FooterComponent,
-    CuadrobeneficiosComponent
+    CuadrobeneficiosComponent,
+    KlynticExpressComponent,
+    KlynticHeroComponent,
+    KlynticProComponent,
+    KlynticEnterpriseComponent,
+    KlynticExpvschatbotComponent,
+    KlynticExpFunnelCrecimientoComponent
   ],
   exports: [
     ComentariosComponent,
@@ -60,11 +73,18 @@ import { CuadrobeneficiosComponent } from './cuadrobeneficios/cuadrobeneficios.c
      ApplepageComponent,
      HerosectionComponent,
      FooterComponent,
-     CuadrobeneficiosComponent
+     CuadrobeneficiosComponent,
+     KlynticExpressComponent,
+    KlynticHeroComponent,
+    KlynticProComponent,
+    KlynticEnterpriseComponent,
+    KlynticExpvschatbotComponent,
+    KlynticExpFunnelCrecimientoComponent
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    PipesModule
   ]
 })
 export class ComponentsModule { }

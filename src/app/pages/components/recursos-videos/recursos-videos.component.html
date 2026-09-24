@@ -94,7 +94,7 @@
         <div class="modal-body p-4 pt-0">
         <div *ngIf="videoSeleccionado" class="w-100 rounded-3 overflow-hidden shadow video-container-custom bg-black">
           <iframe 
-            [src]="transformarUrl(videoSeleccionado.urlMedia)" 
+            [src]="transformarUrl(videoSeleccionado.urlMedia) | cloudinaryVideo" 
             title="Reproductor Klyntic" 
             allow="autoplay; fullscreen"
             class="custom-iframe-size border-0"

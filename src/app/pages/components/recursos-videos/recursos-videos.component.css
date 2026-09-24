@@ -198,3 +198,13 @@
     height: 50vh; /* Reducimos la altura en móviles para evitar cortes en el modal */
   }
 }
+
+/* Forzamos al fondo traslúcido a quedarse en una capa intermedia */
+::ng-deep .modal-backdrop {
+  z-index: 1040 !important;
+}
+
+/* Forzamos a la caja del diálogo del modal a saltar a la capa superior absoluta */
+::ng-deep .modal {
+  z-index: 1055 !important;
+}

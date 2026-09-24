@@ -50,7 +50,7 @@ export class RecursosVideosComponent {
 
   getRecursos(){
     this.isLoading = true;
-    this.recursosService.getRecursos().subscribe((resp:any)=>{
+    this.recursosService.getRecursosActivos().subscribe((resp:any)=>{
       this.recursos = resp;
       this.isLoading = false;
     })
@@ -107,12 +107,21 @@ export class RecursosVideosComponent {
     return this.sanitizer.bypassSecurityTrustResourceUrl(urlEmbebida);
   }
 
-  // Lógica para abrir el Modal e inicializar el video
+  // Lógica optimizada para abrir el Modal sin conflictos de capas
   abrirModalVideo(video: Recurso) {
     this.videoSeleccionado = video;
     const modalElement = document.getElementById('videoModal');
+    
     if (modalElement) {
-      this.modalInstancia = new bootstrap.Modal(modalElement);
+      this.modalInstancia = new bootstrap.Modal(modalElement, {
+        backdrop: true, // Mantiene el fondo oscuro
+        keyboard: true
+      });
+      
+      // 🚀 TRUCO MAESTRO: Movemos el nodo del modal directamente al <body>
+      // Esto lo saca de la sección '.videoss' y destruye el bug del z-index para siempre
+      document.body.appendChild(modalElement);
+      
       this.modalInstancia.show();
     }
   }

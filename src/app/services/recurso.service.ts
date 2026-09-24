@@ -39,6 +39,13 @@ export class RecursoService {
         map((resp: { ok: boolean, recursos: Recurso }) => resp.recursos)
       )
   }
+  getRecursosActivos() {
+    const url = `${baseUrl}/recursos/activos`;
+    return this.http.get<any>(url, this.headers)
+      .pipe(
+        map((resp: { ok: boolean, recursos: Recurso }) => resp.recursos)
+      )
+  }
 
 
   getRecurso(_id: string) {

@@ -1,0 +1,48 @@
+/* Tarjetas oscuras traslúcidas estilo cristal esmerilado (Glassmorphism sutil) */
+
+.express-vs-bot-container {
+  padding-bottom: 80px;
+}
+.express-vs-bot-container .card-dark-premium {
+  background-color: #121214 !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-radius: 16px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.express-vs-bot-container .card-dark-premium:hover {
+  transform: translateY(-4px) !important;
+  background-color: #161619 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* ⚡ CONTENEDOR DE ICONOS REFORZADO */
+.express-vs-bot-container .icon-badge {
+  width: 48px !important;       /* Incrementado un poco el tamaño de la caja */
+  height: 48px !important;
+  border-radius: 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1.35rem !important; /* Iconos más grandes y visibles */
+}
+
+/* Paleta de Colores de Acentos Premium (Subida la opacidad al 15% para dar brillo) */
+.express-vs-bot-container .bg-primary-opacity { background-color: rgba(0, 122, 255, 0.15) !important; }
+.express-vs-bot-container .text-primary-custom { color: #007AFF !important; }
+
+.express-vs-bot-container .bg-success-opacity { background-color: rgba(37, 211, 102, 0.15) !important; }
+.express-vs-bot-container .text-success-custom { color: #25D366 !important; }
+
+.express-vs-bot-container .bg-warning-opacity { background-color: rgba(255, 159, 10, 0.15) !important; }
+.express-vs-bot-container .text-warning-custom { color: #FF9F0A !important; }
+
+.express-vs-bot-container .bg-purple-opacity { background-color: rgba(168, 85, 247, 0.15) !important; }
+.express-vs-bot-container .text-purple-custom { color: #A855F7 !important; }
+
+/* ⚡ MEJORA DE CONTRASTE: Gris Apple Titanio más claro para fondo oscuro */
+.express-vs-bot-container .card-dark-premium p {
+  line-height: 1.5 !important;
+  color: #a1a1a6 !important; 
+}

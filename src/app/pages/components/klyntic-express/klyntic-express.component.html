@@ -1,0 +1,84 @@
+<section class="klyntic-express-section py-5">
+  <div class="container py-4">
+    <div class="row align-items-center g-5">
+
+      <!-- BLOQUE IZQUIERDO: TEXTO ESTRATÉGICO Y CAPTACIÓN -->
+      <div class="col-lg-6 text-center text-lg-start d-flex flex-column align-items-center align-items-lg-start">
+        
+        <!-- Badge de Lanzamiento -->
+        <span class="badge-express mb-3">
+          <i class="fa-solid fa-bolt me-1 text-warning"></i> NUEVO
+        </span>
+        
+        <!-- Título principal -->
+        <h2 class="fw-black display-4 mb-3 text-white">Klyntic Express</h2>
+        <p class="lead text-muted mb-5 max-w-paragraph fs-5">
+          Transforma tu biografía de Instagram en un recepcionista digital disponible 24/7. 
+          Permite que tus seguidores agenden citas reales en caliente.
+        </p>
+
+        <!-- Beneficios en rejilla Flexbox limpia -->
+        <div class="benefits-wrapper w-100 max-w-paragraph">
+          
+          <!-- Beneficio 1 -->
+          <div class="d-flex align-items-start mb-4 text-start">
+            <div class="flex-shrink-0 me-3 mt-1 text-instagram fs-4 d-flex align-items-center justify-content-center icon-box-premium">
+              <i class="fa-brands fa-instagram"></i>
+            </div>
+            <div>
+              <h5 class="fw-bold text-white mb-1 fs-5 ">Cero fricción en Redes Sociales</h5>
+              <p class="text-muted small mb-0">El paciente selecciona el consultorio, el día y la hora de manera visual sin abandonar su teléfono celular.</p>
+            </div>
+          </div>
+
+          <!-- Beneficio 2 -->
+          <div class="d-flex align-items-start mb-5 text-start">
+            <div class="flex-shrink-0 me-3 mt-1 text-pro fs-4 d-flex align-items-center justify-content-center icon-box-premium">
+              <i class="fa-solid fa-circle-nodes"></i>
+            </div>
+            <div>
+              <h5 class="fw-bold text-white mb-1 fs-5 ">Conexión con el Ecosistema Pro</h5>
+              <p class="text-muted small mb-0">La solicitud alimenta tu agenda interna y viaja estructurada a tu WhatsApp para el cierre formal.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Botón único de Conversión inmune a bloqueos -->
+        <div class="w-100 max-w-paragraph mt-2">
+          <a [href]="'https://wa.me' + phone + '?text=' + message" 
+             target="_blank"
+             rel="noopener noreferrer"
+             class="btn btn-express-cta btn-lg px-5 py-3 shadow d-inline-flex align-items-center justify-content-center">
+            <i class="fa-brands fa-whatsapp fa-lg me-2 text-success-neon"></i> Probar gratis
+          </a>
+        </div>
+
+      </div>
+
+      <!-- BLOQUE DERECHO: SMARTPHONE IPHONE MOCKUP CON CLOUDINARY + PIPE -->
+      <div class="col-lg-6 mt-5 mt-lg-0 d-flex justify-content-center align-items-center">
+        <div class="landing-smartphone-frame shadow-2xl">
+
+          <!-- Notch / Isla Dinámica -->
+          <div class="landing-smartphone-notch"></div>
+
+          <!-- Pantalla con reproducción streaming optimizada por Cloudinary -->
+          <div class="landing-smartphone-screen">
+            <video [src]="videoUrl | cloudinaryVideo" autoplay  loop 
+                   muted 
+                   playsinline
+                   preload="auto"
+                   class="video-render">
+            </video>
+          </div>
+
+          <!-- Home indicator bar -->
+          <div class="landing-smartphone-home-bar"></div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
