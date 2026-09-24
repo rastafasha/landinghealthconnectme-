@@ -31,27 +31,6 @@
     line-height: 1.5;
 }
 
-/* --- Lista de Características Estilizada --- */
-.apple-feature-list {
-    list-style: none;
-}
-
-.icon-wrapper {
-    background: rgba(255, 255, 255, 0.04); /* Fondo sutil translúcido */
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 8px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.2s, background 0.2s;
-}
-
-.text-light-muted {
-    color: #ceced2; /* Gris claro de Apple */
-    font-size: 1rem;
-    font-weight: 400;
-}
 
 /* Efecto hover interactivo para los ítems */
 .animate-item:hover .icon-wrapper {
@@ -95,4 +74,36 @@
     transform: translateY(-8px) scale(1.01);
     box-shadow: 0 40px 80px rgba(0, 0, 0, 0.7), 
                 0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+/* --- Lista de Características Estilizada --- */
+.apple-feature-list {
+    list-style: none;
+}
+
+/* CORRECCIÓN: Se añade un tamaño fijo y cuadrado para que los íconos no se peguen */
+.icon-wrapper {
+    background: rgba(255, 255, 255, 0.04); /* Fondo sutil translúcido */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    width: 42px;             /* Ancho fijo para el contenedor del ícono */
+    height: 42px;            /* Alto fijo para mantenerlo perfectamente cuadrado */
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;          /* Evita que Bootstrap colapse el contenedor en pantallas pequeñas */
+    transition: transform 0.2s, background 0.2s;
+    margin-right: 15px;
+}
+
+/* Estilo base para los íconos de Font Awesome dentro del contenedor */
+.icon-wrapper i {
+    font-size: 1.15rem;      /* Tamaño de fuente óptimo para los íconos */
+    display: block;
+}
+
+.text-light-muted {
+    color: #ceced2; /* Gris claro de Apple */
+    font-size: 1rem;
+    font-weight: 400;
 }
