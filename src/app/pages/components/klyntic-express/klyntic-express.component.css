@@ -32,8 +32,8 @@
   border-radius: 10px;
 }
 
-.klyntic-express-section .text-instagram { color: #f72585; }
-.klyntic-express-section .text-pro { color: #3a86ff; }
+.klyntic-express-section .text-instagram { color: #f72585; margin-right: 10px; }
+.klyntic-express-section .text-pro { color: #3a86ff; margin-right: 10px; }
 .klyntic-express-section .text-success-neon { color: #25D366; }
 
 .klyntic-express-section .btn-express-cta {

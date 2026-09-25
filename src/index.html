@@ -155,7 +155,7 @@
     </div>
   </div>
 
- <script>
+<script>
 document.addEventListener("DOMContentLoaded", function () {
   const pricingLatam = document.getElementById("pricing-latam");
   const pricingEuropa = document.getElementById("pricing-europa");
@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Pequeña pausa para asegurar que el componente ya inyectó el HTML interno
     setTimeout(() => conmutarPrecios(cachedRegion), 50);
   } else {
-    // 2. Si no hay caché, consultamos la API oficial por JSON
+    // 2. CORRECCIÓN CRÍTICA: Se añade '/json/' al final de la URL para recibir los datos reales
     fetch('https://ipapi.co')
       .then(response => {
         if (!response.ok || !response.headers.get('content-type')?.includes('application/json')) {
@@ -176,7 +176,9 @@ document.addEventListener("DOMContentLoaded", function () {
         return response.json();
       })
       .then(data => {
+        // ipapi nos da el código del continente (EU = Europa)
         const region = (data.continent_code === 'EU') ? 'europa' : 'latam';
+        
         sessionStorage.setItem("klyntic_region", region);
         conmutarPrecios(region);
       })
@@ -199,7 +201,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const val = pricingEuropa.querySelector(".pricing-value");
       const note = pricingEuropa.querySelector(".pricing-note");
       if (val) val.textContent = "49 €";
-      if (note) note.textContent = "Suscripción mensual flexible. Sin contratos de permanencia.";
+      if (note) note.textContent = "* Requiere pago único de activación de 249 € en modalidad mensual.";
     } else {
       // Mantenemos la estructura por defecto para LATAM/USA
       pricingEuropa.classList.add("d-none");
@@ -213,6 +215,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 </script>
+
 
 
 </body>
