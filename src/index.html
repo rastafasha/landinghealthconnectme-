@@ -160,50 +160,46 @@ document.addEventListener("DOMContentLoaded", function () {
   const pricingLatam = document.getElementById("pricing-latam");
   const pricingEuropa = document.getElementById("pricing-europa");
 
-  // 1. Verificamos la memoria de la sesión
-  const cachedRegion = sessionStorage.getItem("klyntic_region");
+  // 1. Verificamos si ya hay una región guardada en la sesión
+  let region = sessionStorage.getItem("klyntic_region");
 
-  if (cachedRegion) {
-    // Pequeña pausa para asegurar que el componente ya inyectó el HTML interno
-    setTimeout(() => conmutarPrecios(cachedRegion), 50);
-  } else {
-    // 2. CORRECCIÓN CRÍTICA: Se añade '/json/' al final de la URL para recibir los datos reales
-    fetch('https://ipapi.co')
-      .then(response => {
-        if (!response.ok || !response.headers.get('content-type')?.includes('application/json')) {
-          throw new Error("Respuesta de API no válida");
-        }
-        return response.json();
-      })
-      .then(data => {
-        // ipapi nos da el código del continente (EU = Europa)
-        const region = (data.continent_code === 'EU') ? 'europa' : 'latam';
-        
-        sessionStorage.setItem("klyntic_region", region);
-        conmutarPrecios(region);
-      })
-      .catch(error => {
-        console.warn("Geolocalización saltada o bloqueada. Manteniendo LATAM/USA por defecto.");
-        conmutarPrecios('latam');
-      });
+  if (!region) {
+    try {
+      // 2. SOLUCIÓN MAESTRA: Leemos la zona horaria nativa del navegador del usuario
+      // Esto devuelve textos como "Europe/Madrid", "America/Caracas", "America/New_York"
+      const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      
+      // Si la zona horaria comienza con "Europe", el usuario está en Europa
+      if (userTimezone && userTimezone.startsWith("Europe")) {
+        region = 'europa';
+      } else {
+        region = 'latam';
+      }
+      
+      // Guardamos la región en la sesión
+      sessionStorage.setItem("klyntic_region", region);
+    } catch (e) {
+      // Si ocurre un error inesperado, dejamos LATAM por seguridad
+      region = 'latam';
+    }
   }
+
+  // 3. Ejecutamos la conmutación de los precios con una pequeña holgura para el renderizado modular
+  setTimeout(() => conmutarPrecios(region), 40);
 
   // Función maestra para mostrar el bloque correcto y ajustar los textos internos
   function conmutarPrecios(region) {
     if (!pricingLatam || !pricingEuropa) return;
 
     if (region === 'europa') {
-      // Intercambiamos visibilidad de los contenedores padres
       pricingLatam.classList.add("d-none");
       pricingEuropa.classList.remove("d-none");
 
-      // Inyectamos los textos de Euros dentro del componente activo
       const val = pricingEuropa.querySelector(".pricing-value");
       const note = pricingEuropa.querySelector(".pricing-note");
       if (val) val.textContent = "49 €";
       if (note) note.textContent = "* Requiere pago único de activación de 249 € en modalidad mensual.";
     } else {
-      // Mantenemos la estructura por defecto para LATAM/USA
       pricingEuropa.classList.add("d-none");
       pricingLatam.classList.remove("d-none");
 
@@ -215,6 +211,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 </script>
+
+
 
 
 
