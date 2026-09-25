@@ -1,0 +1,77 @@
+<!-- COMPONENTE: KlynticPreciosPro.html -->
+<div class="klyntic-pricing-section py-5" style="background-color: #0d0d0c;">
+  <div class="container">
+    
+    <!-- Encabezado Estilo Apple -->
+    <div class="text-center mb-5">
+      <span class="badge-feature text-uppercase" style="color: #0071e3; letter-spacing: 1.5px; font-size: 0.75rem; font-weight: 600;">Suscripción Mensual</span>
+      <h3 class="fw-black text-white display-5 mb-2" style="font-weight: 700; letter-spacing: -0.02em;">Todo el poder de Klyntic. Una tarifa plana.</h3>
+      <p class="text-muted max-w-2xl mx-auto fs-5">Acceso inmediato a todo nuestro ecosistema digital. Sin contratos forzosos, cancele cuando lo desee.</p>
+    </div>
+
+    <!-- Tarjeta Premium Centralizada (Diseño Horizontal/Ancho) -->
+    <div class="row justify-content-center">
+      <div class="col-lg-10 col-xl-8">
+        <div class="card-dark-premium p-5" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 24px;">
+          
+          <div class="row g-4 align-items-center">
+            
+            <!-- Bloque Izquierdo: Plan y Precio -->
+            <div class="col-md-5 text-center text-md-start border-end-md pb-4 pb-md-0" style="border-color: rgba(255,255,255,0.08) !important;">
+              <h4 class="fw-bold text-white mb-1 fs-2">Klyntic Pro</h4>
+              <p class="text-muted small mb-4">La suite definitiva para médicos especialistas y consultorios independientes.</p>
+              
+              <!-- Precio (Usa clases de Bootstrap o CSS para inyectar la moneda según tu JS de Geolocalización) -->
+              <div class="d-flex align-items-baseline justify-content-center justify-content-md-start mb-4">
+                <span class="display-3 fw-bold text-white pricing-value">$45</span>
+                <span class="text-muted ms-2 pricing-period">/ mes</span>
+              </div>
+              
+              
+
+              <a [href]="'https://wa.me' + phone + '?text=' + message" 
+             target="_blank"
+             rel="noopener noreferrer"
+             class="btn btn-primary px-4 py-3 w-100">
+            <i class="fa-brands fa-whatsapp fa-lg me-2 text-success-neon"
+            style="background-color: #0071e3; border: none; border-radius: 12px; font-weight: 600; letter-spacing: 0.5px;"></i> Iniciar Periodo de Prueba
+          </a>
+              <p class="text-muted xx-small mt-3 mb-0 pricing-note" style="font-size: 0.72rem;">* Pruebe la plataforma gratis por 7 días.</p>
+            </div>
+            
+            <!-- Bloque Derecho: Características Incluidas -->
+            <div class="col-md-7 ps-md-5">
+              <h6 class="text-white fw-bold mb-3 small text-uppercase tracking-wider opacity-75">¿Qué incluye su suscripción?</h6>
+              
+              <ul class="list-unstyled text-light-muted m-0 p-0" style="color: #ceced2;">
+                <li class="d-flex align-items-start gap-3 mb-3">
+                  <i class="fa-solid fa-circle-check text-primary-custom mt-1" style="color: #0071e3;"></i>
+                  <span><strong>Klyntic Paciente:</strong> Aplicación web premium para que sus pacientes gestionen su historial y pagos.</span>
+                </li>
+                <li class="d-flex align-items-start gap-3 mb-3">
+                  <i class="fa-solid fa-circle-check text-primary-custom mt-1" style="color: #0071e3;"></i>
+                  <span><strong>Reserva Express:</strong> Enlace personalizado para agendamiento inteligente en 10 segundos.</span>
+                </li>
+                <li class="d-flex align-items-start gap-3 mb-3">
+                  <i class="fa-solid fa-circle-check text-primary-custom mt-1" style="color: #0071e3;"></i>
+                  <span><strong>Control Clínico Pro:</strong> Agenda síncrona al milisegundo e historias clínicas digitales seguras.</span>
+                </li>
+                <li class="d-flex align-items-start gap-3 mb-3">
+                  <i class="fa-solid fa-circle-check text-primary-custom mt-1" style="color: #0071e3;"></i>
+                  <span><strong>Alertas Push Nativa:</strong> Notificaciones instantáneas en los móviles de su equipo sin costes por mensaje.</span>
+                </li>
+                <li class="d-flex align-items-start gap-3">
+                  <i class="fa-solid fa-circle-check text-primary-custom mt-1" style="color: #0071e3;"></i>
+                  <span><strong>Seguridad Arquitectónica:</strong> Filtro estricto de datos de entrada y blindaje anti-baneos de Meta.</span>
+                </li>
+              </ul>
+            </div>
+            
+          </div><!-- Fila interna -->
+          
+        </div>
+      </div>
+    </div><!-- Fila principal -->
+    
+  </div>
+</div>

@@ -156,6 +156,58 @@
       </div>
     </div>
   </div>
+
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  // 1. Verificamos si ya guardamos la ubicación en esta sesión para no saturar la API
+  const cachedRegion = sessionStorage.getItem("klyntic_region");
+
+  if (cachedRegion) {
+    aplicarPrecios(cachedRegion);
+  } else {
+    // 2. CORRECCIÓN: Apuntamos al endpoint /json/ oficial de la API
+    fetch('https://ipapi.co')
+      .then(response => {
+        // Validación de seguridad estilo Apple: Si la API falla o devuelve HTML, saltamos al catch
+        if (!response.ok || !response.headers.get('content-type')?.includes('application/json')) {
+          throw new Error("La API no respondió con un formato de datos válido");
+        }
+        return response.json();
+      })
+      .then(data => {
+        // ipapi nos da el código del continente (EU = Europa)
+        const region = (data.continent_code === 'EU') ? 'europa' : 'latam';
+        
+        // Guardamos en la sesión del navegador para no repetir la consulta en otras pestañas
+        sessionStorage.setItem("klyntic_region", region);
+        aplicarPrecios(region);
+      })
+      .catch(error => {
+        console.warn("Fallo silencioso en geolocalización (límite o bloqueador). Usando LATAM por defecto.");
+        // Plan de contingencia: Si la API se cae, la web sigue funcionando perfectamente en dólares
+        aplicarPrecios('latam');
+      });
+  }
+
+  // Función interna que cambia los precios y notas en vivo de la tarjeta única Pro
+  function aplicarPrecios(region) {
+    const pricingValue = document.querySelector(".pricing-value");
+    const pricingNote = document.querySelector(".pricing-note");
+
+    // Verificación defensiva: Solo ejecutamos si los elementos existen en la pantalla actual
+    if (pricingValue && pricingNote) {
+      if (region === 'europa') {
+        pricingValue.textContent = "49 €";
+        pricingNote.textContent = "Suscripción mensual flexible. Sin contratos de permanencia.";
+      } else {
+        pricingValue.textContent = "$45";
+        pricingNote.textContent = "* Requiere pago único de activación de $150 en modalidad mensual.";
+      }
+    }
+  }
+});
+</script>
+
 </body>
 
 </html>

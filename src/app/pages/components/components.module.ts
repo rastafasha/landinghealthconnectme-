@@ -26,6 +26,9 @@ import { KlynticEnterpriseComponent } from './klyntic-enterprise/klyntic-enterpr
 import { KlynticExpvschatbotComponent } from './klyntic-expvschatbot/klyntic-expvschatbot.component';
 import { KlynticExpFunnelCrecimientoComponent } from './klyntic-exp-funnel-crecimiento/klyntic-exp-funnel-crecimiento.component';
 import { PipesModule } from 'src/app/pipes/pipes.module';
+import { PlanesPreciosComponent } from './planes-precios/planes-precios.component';
+import { PlanesPreciosEuropaComponent } from './planes-precios-europa/planes-precios-europa.component';
+import { PlanesPreciosKlynticProComponent } from './planes-precios-klyntic-pro/planes-precios-klyntic-pro.component';
 
 
 @NgModule({
@@ -53,7 +56,10 @@ import { PipesModule } from 'src/app/pipes/pipes.module';
     KlynticProComponent,
     KlynticEnterpriseComponent,
     KlynticExpvschatbotComponent,
-    KlynticExpFunnelCrecimientoComponent
+    KlynticExpFunnelCrecimientoComponent,
+    PlanesPreciosComponent,
+    PlanesPreciosEuropaComponent,
+    PlanesPreciosKlynticProComponent
   ],
   exports: [
     ComentariosComponent,
@@ -79,7 +85,10 @@ import { PipesModule } from 'src/app/pipes/pipes.module';
     KlynticProComponent,
     KlynticEnterpriseComponent,
     KlynticExpvschatbotComponent,
-    KlynticExpFunnelCrecimientoComponent
+    KlynticExpFunnelCrecimientoComponent,
+    PlanesPreciosComponent,
+    PlanesPreciosEuropaComponent,
+    PlanesPreciosKlynticProComponent
   ],
   imports: [
     CommonModule,
