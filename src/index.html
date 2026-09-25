@@ -90,7 +90,7 @@
   <app-root></app-root>
   <script src="./assets/js/jquery.js"></script>
   <script src="./assets/js/library.js"></script>
-  <script src="./assets/js/script.js"></script>
+  <!-- <script src="./assets/js/script.js"></script> -->
   <script src="./assets/js/retina.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -157,56 +157,65 @@
     </div>
   </div>
 
-  <script>
+ <script>
 document.addEventListener("DOMContentLoaded", function () {
-  // 1. Verificamos si ya guardamos la ubicación en esta sesión para no saturar la API
+  const pricingLatam = document.getElementById("pricing-latam");
+  const pricingEuropa = document.getElementById("pricing-europa");
+
+  // 1. Verificamos la memoria de la sesión
   const cachedRegion = sessionStorage.getItem("klyntic_region");
 
   if (cachedRegion) {
-    aplicarPrecios(cachedRegion);
+    // Pequeña pausa para asegurar que el componente ya inyectó el HTML interno
+    setTimeout(() => conmutarPrecios(cachedRegion), 50);
   } else {
-    // 2. CORRECCIÓN: Apuntamos al endpoint /json/ oficial de la API
+    // 2. Si no hay caché, consultamos la API oficial por JSON
     fetch('https://ipapi.co')
       .then(response => {
-        // Validación de seguridad estilo Apple: Si la API falla o devuelve HTML, saltamos al catch
         if (!response.ok || !response.headers.get('content-type')?.includes('application/json')) {
-          throw new Error("La API no respondió con un formato de datos válido");
+          throw new Error("Respuesta de API no válida");
         }
         return response.json();
       })
       .then(data => {
-        // ipapi nos da el código del continente (EU = Europa)
         const region = (data.continent_code === 'EU') ? 'europa' : 'latam';
-        
-        // Guardamos en la sesión del navegador para no repetir la consulta en otras pestañas
         sessionStorage.setItem("klyntic_region", region);
-        aplicarPrecios(region);
+        conmutarPrecios(region);
       })
       .catch(error => {
-        console.warn("Fallo silencioso en geolocalización (límite o bloqueador). Usando LATAM por defecto.");
-        // Plan de contingencia: Si la API se cae, la web sigue funcionando perfectamente en dólares
-        aplicarPrecios('latam');
+        console.warn("Geolocalización saltada o bloqueada. Manteniendo LATAM/USA por defecto.");
+        conmutarPrecios('latam');
       });
   }
 
-  // Función interna que cambia los precios y notas en vivo de la tarjeta única Pro
-  function aplicarPrecios(region) {
-    const pricingValue = document.querySelector(".pricing-value");
-    const pricingNote = document.querySelector(".pricing-note");
+  // Función maestra para mostrar el bloque correcto y ajustar los textos internos
+  function conmutarPrecios(region) {
+    if (!pricingLatam || !pricingEuropa) return;
 
-    // Verificación defensiva: Solo ejecutamos si los elementos existen en la pantalla actual
-    if (pricingValue && pricingNote) {
-      if (region === 'europa') {
-        pricingValue.textContent = "49 €";
-        pricingNote.textContent = "Suscripción mensual flexible. Sin contratos de permanencia.";
-      } else {
-        pricingValue.textContent = "$45";
-        pricingNote.textContent = "* Requiere pago único de activación de $150 en modalidad mensual.";
-      }
+    if (region === 'europa') {
+      // Intercambiamos visibilidad de los contenedores padres
+      pricingLatam.classList.add("d-none");
+      pricingEuropa.classList.remove("d-none");
+
+      // Inyectamos los textos de Euros dentro del componente activo
+      const val = pricingEuropa.querySelector(".pricing-value");
+      const note = pricingEuropa.querySelector(".pricing-note");
+      if (val) val.textContent = "49 €";
+      if (note) note.textContent = "Suscripción mensual flexible. Sin contratos de permanencia.";
+    } else {
+      // Mantenemos la estructura por defecto para LATAM/USA
+      pricingEuropa.classList.add("d-none");
+      pricingLatam.classList.remove("d-none");
+
+      const val = pricingLatam.querySelector(".pricing-value");
+      const note = pricingLatam.querySelector(".pricing-note");
+      if (val) val.textContent = "$45";
+      if (note) note.textContent = "* Requiere pago único de activación de $200 en modalidad mensual.";
     }
   }
 });
 </script>
+
 
 </body>
 
