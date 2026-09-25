@@ -21,17 +21,20 @@
     position: relative;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     background-color: var(--bg-dark);
+    /* CORRECCIÓN CRÍTICA: Corta cualquier elemento absoluto que intente salirse de la sección */
+    overflow: hidden !important; 
 }
 
 .glow-effect {
     position: absolute;
-    width: 600px;
+    width: 600px;  /* Ancho ideal para computadoras */
     height: 300px;
     background: radial-gradient(circle, rgba(0, 113, 227, 0.15) 0%, rgba(0,0,0,0) 70%);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     pointer-events: none;
+    z-index: 1;
 }
 
 .badge-apple {
@@ -45,7 +48,7 @@
 
 /* --- Título Masivo Pro con Degradado --- */
 .hero-title {
-    font-size: calc(2.5rem + 2.2vw); /* Tamaño ultra-escalable y masivo */
+    font-size: calc(1.5rem + 2.2vw); /* Tamaño ultra-escalable y masivo */
     font-weight: 700;
     line-height: 1.1;
     letter-spacing: -0.03em;
@@ -63,7 +66,7 @@
 
 .main-subtitle {
     font-size: calc(1.05rem + 0.2vw);
-    color: var(--text-muted);
+    color: #86868b;
     line-height: 1.4;
     font-weight: 400;
     max-width: 620px;
@@ -109,7 +112,7 @@
     display: inline-block;
     max-height: 80px; /* Si es imagen, controla un tamaño balanceado en el Hero */
     width: auto;
-    font-size: calc(4rem + 3vw); /* Si es texto, conserva el tamaño gigante */
+    font-size: calc(3rem + 3vw); /* Si es texto, conserva el tamaño gigante */
     font-weight: 700;
     letter-spacing: -0.04em;
     line-height: 1;
@@ -153,3 +156,31 @@
         transform: translateY(0);
     }
 }
+
+
+
+/* 2. REGLA ADAPTABLE: Reduce el tamaño del título en móviles y pantallas pequeñas */
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2.2rem !important; /* Un tamaño imponente pero seguro para móviles */
+        line-height: 1.2 !important;
+    }
+    .glow-effect {
+        width: 100vw;   /* Ocupa el 100% del ancho del teléfono, nunca más */
+        height: 40vh;   /* Se adapta proporcionalmente a la pantalla */
+    }
+    
+    .main-subtitle {
+        font-size: 1rem !important;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    /* Evita que los botones o enlaces del CTA se salgan de la pantalla */
+    .hero-cta-group {
+        flex-direction: column !important; /* Los alinea verticalmente en pantallas muy delgadas */
+        gap: 1rem !important;
+        width: 100%;
+    }
+}
+
