@@ -107,3 +107,122 @@
     font-size: 1rem;
     font-weight: 400;
 }
+
+
+
+
+/* --- Bloque de Fuerza Estructura Horizontal (Anticorrupción Bootstrap) --- */
+/* --- Contenedor Principal del Bloque Derecho --- */
+.apple-mockup-carousel-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 460px; 
+    margin: 0 auto;
+    z-index: 2;
+}
+
+/* Ventana de recorte que oculta las capturas inactivas */
+.apple-carousel-viewport {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Riel continuo que agrupa los slides horizontalmente */
+.apple-carousel-track {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important; /* Evita que Bootstrap rompa la fila */
+    width: 100%;
+    height: auto;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); /* Curva Bézier de Apple */
+    will-change: transform;
+}
+
+/* Caja de cada Slide (Ocupa exactamente el 100% de la ventana) */
+.apple-carousel-slide {
+    flex-shrink: 0 !important; /* Impide que los elementos se compriman */
+    width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.slide-device-frame {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+/* Imagen con la estética de sombras profundas de Apple */
+.apple-phone-screen {
+    max-height: 420px; 
+    width: auto;
+    object-fit: contain;
+    border-radius: 20px; 
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), 
+                0 0 0 1px rgba(255, 255, 255, 0.08);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Texto referencial inferior */
+.slide-caption {
+    font-size: 0.95rem;
+    color: #ceced2;
+    line-height: 1.5;
+    max-width: 85%;
+    margin: 0 auto;
+    font-weight: 400;
+    opacity: 0.4;
+    transition: opacity 0.4s ease, color 0.4s ease;
+}
+
+/* Resaltado para el texto activo */
+.slide-caption.active-caption {
+    opacity: 1;
+    color: #ffffff;
+}
+
+/* --- Paginación por Puntos Nativos --- */
+.apple-native-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.apple-dot {
+    background: #ffffff;
+    opacity: 0.25;
+    border: none;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    padding: 0;
+    cursor: pointer;
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s ease, background-color 0.3s;
+}
+
+.apple-dot:hover {
+    opacity: 0.5;
+}
+
+.apple-dot-active {
+    opacity: 1 !important;
+    background-color: #0071e3 !important;
+    transform: scale(1.1);
+}
+
+/* Efecto hover interactivo general */
+.apple-mockup-carousel-wrapper:hover .apple-phone-screen {
+    transform: translateY(-6px);
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.7), 
+                0 0 0 1px rgba(255, 255, 255, 0.12);
+}

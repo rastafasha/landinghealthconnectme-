@@ -20,9 +20,9 @@
       </div>
     </div>
   </div>
-
+  <app-loading *ngIf="isLoading"></app-loading>
   <!-- Cuadrícula Dinámica de Contenido (Bootstrap Grid) -->
-  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4 apple-video-grid">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4 apple-video-grid" *ngIf="!isLoading">
   <div *ngFor="let item of recursosFiltrados" class="col d-flex">
     
     <!-- La clase 'w-100 d-flex flex-column' obliga a todas las tarjetas a estirarse por igual -->
@@ -108,7 +108,7 @@
   </div>
 
 
-  <app-loading *ngIf="isLoading"></app-loading>
+  
 
   <!-- Estado vacío (Si no hay recursos) -->
   <div *ngIf="recursosFiltrados.length === 0 && !isLoading" class="text-center py-5">

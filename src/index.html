@@ -8,6 +8,7 @@
   <!-- <base href="https://klyntic.com/"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://jsdelivr.net" />
 
   <!-- seo -->
   <meta name="description"
@@ -210,12 +211,35 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const swiper = new Swiper('.apple-swiper-container', {
+        loop: true,
+        grabCursor: true,
+        centeredSlides: true,
+        speed: 600,
+        
+        // Atributos de reparación para inicialización reactiva en Bootstrap 5
+        observer: true,
+        observeParents: true,
+        
+        autoplay: {
+            delay: 4500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.apple-pagination',
+            clickable: true,
+        },
+    });
+});
 </script>
 
 
 
 
-
+<script src="https://jsdelivr.net"></script>
 </body>
 
 </html>

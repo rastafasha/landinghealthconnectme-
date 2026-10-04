@@ -58,14 +58,39 @@
       
       <!-- Columna Derecha: El Mockup de la App Flotante -->
       <div class="col-lg-6 order-1 order-lg-2 text-center text-lg-end">
-        <div class="apple-mockup-wrapper">
-          <div class="mockup-shadow-glow"></div>
-          <img
-            src="./assets/upload/screenApp.png"
-            class="img-fluid apple-phone-screen"
-            alt="Klyntic App Screen"
-          />
+        <div class="apple-mockup-carousel-wrapper">
+        <div class="mockup-shadow-glow"></div>
+
+        <!-- Ventana de visualización (Recorta el desborde de las imágenes colindantes) -->
+        <div class="apple-carousel-viewport">
+
+          <!-- Riel de Desplazamiento Horizontal Animado -->
+          <div class="apple-carousel-track" [style.transform]="'translateX(-' + (currentSlide * 100) + '%)'">
+
+            <!-- 🔴 SINTAXIS ANGULAR 15: Cambiado @for por *ngFor -->
+            <div class="apple-carousel-slide" *ngFor="let slide of slides; let i = index">
+              <div class="slide-device-frame">
+                <img [src]="slide.img" [alt]="slide.desc" class="apple-phone-screen"
+                  alt="Captura de pantalla de la aplicación Klyntic Paciente">
+              </div>
+              <!-- El texto se vuelve opaco y brillante si corresponde al slide activo -->
+              <p class="slide-caption" [class.active-caption]="currentSlide === i">
+                {{ slide.desc }}
+              </p>
+            </div>
+
+          </div>
         </div>
+
+        <!-- Paginación de Puntos Estilo Apple (Interactivos con Clic) -->
+        <div class="apple-native-pagination">
+          <!-- 🔴 SINTAXIS ANGULAR 15: Cambiado @for por *ngFor -->
+          <button *ngFor="let slide of slides; let i = index" class="apple-dot"
+            [class.apple-dot-active]="currentSlide === i" (click)="goToSlide(i)"
+            [attr.aria-label]="'Ir a la diapositiva ' + (i + 1)">
+          </button>
+        </div>
+      </div>
       </div>
 
     </div>
