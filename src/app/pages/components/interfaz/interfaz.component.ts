@@ -1,4 +1,4 @@
-import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -6,9 +6,11 @@ import { CommonModule } from '@angular/common';
     templateUrl: './interfaz.component.html',
     styleUrls: ['./interfaz.component.css']
 })
-export class InterfazComponent {
+export class InterfazComponent implements OnInit, OnDestroy{
 // Guardamos el slide que está actualmente en pantalla (empieza en cero)
   currentSlide = 0;
+  autoplayInterval: any; // Guardará la referencia del temporizador
+
 
   // Las 6 capturas de pantalla de Klyntic Paciente
   slides = [
@@ -21,7 +23,36 @@ export class InterfazComponent {
   ];
 
   // Función nativa para cambiar de diapositiva
+//   goToSlide(index: number): void {
+//     this.currentSlide = index;
+//   }
+
+  ngOnInit(): void {
+    this.startAutoplay();
+  }
+
+  ngOnDestroy(): void {
+    this.stopAutoplay(); // Limpieza crucial en Angular al destruir el componente
+  }
+
+  // Inicia el movimiento automático cada 4.5 segundos
+  startAutoplay(): void {
+    this.autoplayInterval = setInterval(() => {
+      this.currentSlide = (this.currentSlide + 1) % this.slides.length;
+    }, 4500);
+  }
+
+  // Detiene el temporizador para que no interfiera
+  stopAutoplay(): void {
+    if (this.autoplayInterval) {
+      clearInterval(this.autoplayInterval);
+    }
+  }
+
+  // Permite al usuario interactuar manualmente con los puntos
   goToSlide(index: number): void {
     this.currentSlide = index;
+    this.stopAutoplay(); // Pausa el autoplay temporalmente si el usuario hace clic
+    this.startAutoplay(); // Lo reinicia para mantener el flujo constante
   }
 }
