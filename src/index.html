@@ -194,31 +194,36 @@ document.addEventListener("DOMContentLoaded", function () {
       pricingLatam.classList.add("d-none");
       pricingEuropa.classList.remove("d-none");
 
-      // 🟢 ACTUALIZACIÓN DE PRECIOS PARA EUROPA
+      // 🟢 ACTUALIZACIÓN DE PRECIOS PARA EUROPA (Saneado a 299 € base + 45 € extra)
       const valPro = pricingEuropa.querySelector(".pricing-value-pro");
       const valEnterprise = pricingEuropa.querySelector(".pricing-value-enterprise");
+      const extraDoc = pricingEuropa.querySelector(".extra-doctor-text");
       const note = pricingEuropa.querySelector(".pricing-note");
 
       if (valPro) valPro.textContent = "49 €";
-      if (valEnterprise) valEnterprise.textContent = "249 €";
-      // Convertimos el costo de activación de Enterprise a Euros de forma coherente
+      if (valEnterprise) valEnterprise.textContent = "299 €";
+      if (extraDoc) extraDoc.textContent = "+ 45 € / mes por cada médico adicional (A partir del 6to)";
       if (note) note.textContent = "* Requiere pago único de activación de 299 € en modalidad mensual.";
 
     } else {
       pricingEuropa.classList.add("d-none");
       pricingLatam.classList.remove("d-none");
 
-      // 🟢 ACTUALIZACIÓN DE PRECIOS PARA LATAM
+      // 🟢 ACTUALIZACIÓN DE PRECIOS PARA LATAM (Corregido a $300 base + $45 extra)
       const valPro = pricingLatam.querySelector(".pricing-value-pro");
       const valEnterprise = pricingLatam.querySelector(".pricing-value-enterprise");
+      const extraDoc = pricingLatam.querySelector(".extra-doctor-text");
       const note = pricingLatam.querySelector(".pricing-note");
 
       if (valPro) valPro.textContent = "$45";
-      if (valEnterprise) valEnterprise.textContent = "$200"; // Modifica por tu valor real en dólares para Enterprise LATAM
-      if (note) note.textContent = "* Requiere pago único de activación de 300 € en modalidad mensual.";
+      if (valEnterprise) valEnterprise.textContent = "$300";
+      if (extraDoc) extraDoc.textContent = "+ $45 / mes por cada médico adicional (A partir del 6to)";
+      // 🟢 CORREGIDO: Cambiado símbolo de € a $ para la nota de LATAM
+      if (note) note.textContent = "* Requiere pago único de activación de $300 en modalidad mensual.";
     }
   }
 });
+
 
 
 
