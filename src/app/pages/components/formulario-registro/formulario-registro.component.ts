@@ -60,11 +60,12 @@ export class FormularioRegistroComponent implements OnInit {
       pais: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       phone: ['', Validators.required],
+      tipoClinica: ['', Validators.required],
       speciality: [''],
-      rrss: [''],
-      address: ['', Validators.required],
-      dondeSeEntero: ['', Validators.required],
-      terminos: ['', Validators.required],
+      
+      dondeSeEntero: [''],
+      // 🟢 CORREGIDO: Usamos Validators.requiredTrue para obligar a marcar la casilla legal
+      terminos: [false, Validators.requiredTrue], 
       statusapp: ['PENDIENTE'],
     });
   }
@@ -80,8 +81,7 @@ export class FormularioRegistroComponent implements OnInit {
     formData.append('ciudad', this.appregistroForm.get('ciudad')?.value);
     formData.append('pais', this.appregistroForm.get('pais')?.value);
     formData.append('phone', this.appregistroForm.get('phone')?.value);
-    formData.append('rrss', this.appregistroForm.get('rrss')?.value);
-    formData.append('address', this.appregistroForm.get('address')?.value);
+    formData.append('tipoClinica', this.appregistroForm.get('tipoClinica')?.value);
     formData.append('terminos', this.appregistroForm.get('terminos')?.value);
     formData.append('dondeSeEntero', this.appregistroForm.get('dondeSeEntero')?.value);
     formData.append('statusapp', 'PENDIENTE');
@@ -91,7 +91,6 @@ export class FormularioRegistroComponent implements OnInit {
     const id = this.appregistroForm.get('id').value;
     const data = {
       ...this.appregistroForm.value,
-      status: 'PENDIENTE'
     }
 
     // console.log(data);
