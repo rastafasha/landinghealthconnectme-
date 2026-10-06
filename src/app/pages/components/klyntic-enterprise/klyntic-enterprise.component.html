@@ -1,21 +1,68 @@
 <div class="apple-page">
   <!-- ================= SECTION 3: KLYNTIC ENTERPRISE (Próximamente) ================= -->
+  <!-- Bloque Klyntic Enterprise (Negro Absoluto con Degradado Metálico) -->
   <section class="product-section enterprise-section text-center">
     <div class="enterprise-glow"></div>
-    <div class="container">
-      <span class="badge-enterprise text-uppercase">Muy Pronto</span>
-      <h2 class="product-title enterprise-gradient">Klyntic Enterprise</h2>
-      <p class="product-tagline text-muted">Gestión hospitalaria y administración de citas en grupo.</p>
-      <p class="product-description text-muted mx-auto">
-        Diseñado para clínicas y consultorios compartidos. Control de accesos por pisos, 
-        roles avanzados para recepcionistas (caja centralizada) y coordinación de personal médico en tiempo real.
-      </p>
-      <div class="cta-links">
-        <span class="badge bg-dark border border-secondary text-white-50 px-3 py-2 rounded-pill font-monospace">
-          Desarrollo Multi-Tenant Activo
-        </span>
+    
+    <div class="container py-5 my-4">
+        <!-- 🟢 CORREGIDO: El badge ahora corona la sección de forma elegante y centrada -->
+        <div class="mb-3">
+            <span class="badge-enterprise apple-fade-init">NUEVO</span>
+        </div>
+        
+        <!-- Contenedor del Título Principal con Zoom Cinematográfico -->
+        <div class="logo-animation-container mb-4">
+            <h2 class="apple-animated-logo enterprise-gradient">Klyntic Enterprise</h2>
+        </div>
+        
+        <!-- Eslogan e Introducción con Entrada Suave -->
+        <div class="apple-fade-init" style="animation-delay: 0.6s;">
+            <p class="product-tagline text-white mb-3" style="font-weight: 300; letter-spacing: -0.01em;">
+                El sistema de gestión médica corporativo para redes de clínicas y hospitales.
+            </p>
+            
+            <div class="d-flex justify-content-center mb-5">
+                <p class="product-description text-center" style="max-width: 750px; font-size: 1.1rem;">
+                    Une el poder operativo de Klyntic Pro, la inmediatez de Klyntic Express y la fidelización de Klyntic Paciente bajo una única infraestructura centralizada. Controla múltiples sedes, automatiza liquidaciones complejas y mantén auditorías completas sin fricciones.
+                </p>
+            </div>
+        </div>
+
+        <!-- Fila de Características Clave Corporativas (Grid con más aire) -->
+        <div class="row text-start my-5 justify-content-center apple-fade-init" style="max-width: 950px; margin: 0 auto; animation-delay: 1s;">
+            <div class="col-md-6 mb-5 px-4">
+                <h4 class="text-white mb-2" style="font-size: 1.3rem; font-weight: 600; letter-spacing: -0.01em;">🏢 Control Multi-Sede Avanzado</h4>
+                <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Gestiona múltiples sucursales u hospitales con bases de datos aisladas pero administradas desde un panel maestro central unificado.</p>
+            </div>
+            <div class="col-md-6 mb-5 px-4">
+                <h4 class="text-white mb-2" style="font-size: 1.3rem; font-weight: 600; letter-spacing: -0.01em;">📊 Liquidaciones y Comisiones</h4>
+                <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Automatiza el cálculo de porcentajes médicos, flujos de cajas centralizados por pisos y balances financieros por sede en tiempo real.</p>
+            </div>
+            <div class="col-md-6 mb-5 px-4">
+                <h4 class="text-white mb-2" style="font-size: 1.3rem; font-weight: 600; letter-spacing: -0.01em;">🔐 Seguridad y Auditoría Completa</h4>
+                <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Roles jerárquicos avanzados para recepcionistas, administradores y médicos. Historial estricto de auditoría para saber qué se modificó y cuándo.</p>
+            </div>
+            <div class="col-md-6 mb-5 px-4">
+                <h4 class="text-white mb-2" style="font-size: 1.3rem; font-weight: 600; letter-spacing: -0.01em;">🚀 Infraestructura Dedicada</h4>
+                <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Servidores corporativos optimizados con copias de seguridad automáticas por hora, soporte prioritario 24/7 y SLA garantizado.</p>
+            </div>
+        </div>
+
+      <!-- Botón de Acción Estratégico (Llamado a Consultoría/Demo) -->
+      <div class="mt-4 animate-fade-in-delayed">
+        <!-- <a href="#contacto-enterprise" class="btn btn-apple-blue rounded-pill px-4 py-2 me-3 shadow-sm">
+                Solicitar Demostración Enterprise
+            </a> -->
+        <a [href]="'https://wa.me' + phone + '?text=' + message" target="_blank" rel="noopener noreferrer"
+          class="btn btn-apple-blue rounded-pill px-4 py-2 me-3 shadow-sm">
+          <i class="fa-brands fa-whatsapp fa-lg me-2 text-success-neon"></i> Solicitar Demostración Enterprise
+        </a>
+        <div class="mt-2" style="font-size: 0.85rem; color: var(--text-muted);">
+          Migramos la base de datos de tu red médica actual sin costo.
+        </div>
       </div>
     </div>
   </section>
+
 
 </div>

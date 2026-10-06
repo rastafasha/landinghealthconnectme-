@@ -155,6 +155,66 @@
     -webkit-text-fill-color: transparent;
 }
 
+/* --- Mejoras de Lectura para Características Enterprise --- */
+/* --- Saneado de Animaciones Estilo Apple --- */
+
+/* Clase de inicialización obligatoria para evitar parpadeos antes de animar */
+.apple-fade-init {
+    opacity: 0;
+    animation: appleFadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Forzamos que el título respete el tamaño y la animación de zoom */
+.apple-animated-logo {
+    display: inline-block;
+    font-size: calc(3rem + 2.5vw);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    opacity: 0;
+    animation: appleZoomIn 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Animación de entrada hacia arriba (Modificada para suavidad extrema) */
+@keyframes appleFadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación Zoom In (Cinematográfica) */
+@keyframes appleZoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(1.3) translateY(10px);
+        filter: blur(4px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        filter: blur(0px);
+    }
+}
+
+/* Ajustes de espacio del Grid */
+.enterprise-section h4 {
+    margin-bottom: 8px;
+}
+.enterprise-section p {
+    font-weight: 300;
+}
+
+/* Forzar que las animaciones de retraso afecten a todo el bloque inferior en bloque */
+.enterprise-section .animate-fade-in-delayed {
+    animation-delay: 0.6s;
+}
+
+
 .logo-animation-container {
     perspective: 1000px;
     display: inline-block;
@@ -191,6 +251,7 @@
         transform: scale(1) translateY(0); /* Llega a su tamaño real y se detiene */
     }
 }
+
 
 /* --- Animación de entrada retrasada para el texto inferior --- */
 .animate-fade-in-delayed {
