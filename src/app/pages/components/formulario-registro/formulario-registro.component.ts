@@ -61,6 +61,7 @@ export class FormularioRegistroComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       phone: ['', Validators.required],
       tipoClinica: ['', Validators.required],
+      name: [''],
       speciality: [''],
       
       dondeSeEntero: [''],
@@ -82,6 +83,7 @@ export class FormularioRegistroComponent implements OnInit {
     formData.append('pais', this.appregistroForm.get('pais')?.value);
     formData.append('phone', this.appregistroForm.get('phone')?.value);
     formData.append('tipoClinica', this.appregistroForm.get('tipoClinica')?.value);
+    formData.append('name', this.appregistroForm.get('name')?.value);
     formData.append('terminos', this.appregistroForm.get('terminos')?.value);
     formData.append('dondeSeEntero', this.appregistroForm.get('dondeSeEntero')?.value);
     formData.append('statusapp', 'PENDIENTE');
