@@ -8,7 +8,6 @@
   <!-- <base href="https://klyntic.com/"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="https://jsdelivr.net" />
 
   <!-- seo -->
   <meta name="description"
@@ -166,8 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (!region) {
     try {
-      // 2. SOLUCIÓN MAESTRA: Leemos la zona horaria nativa del navegador del usuario
-      // Esto devuelve textos como "Europe/Madrid", "America/Caracas", "America/New_York"
+      // 2. Leemos la zona horaria nativa del navegador del usuario
       const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
       
       // Si la zona horaria comienza con "Europe", el usuario está en Europa
@@ -188,7 +186,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // 3. Ejecutamos la conmutación de los precios con una pequeña holgura para el renderizado modular
   setTimeout(() => conmutarPrecios(region), 40);
 
-  // Función maestra para mostrar el bloque correcto y ajustar los textos internos
+  // Función maestra para conmutar bloques y ajustar precios dinámicamente
   function conmutarPrecios(region) {
     if (!pricingLatam || !pricingEuropa) return;
 
@@ -196,50 +194,39 @@ document.addEventListener("DOMContentLoaded", function () {
       pricingLatam.classList.add("d-none");
       pricingEuropa.classList.remove("d-none");
 
-      const val = pricingEuropa.querySelector(".pricing-value");
+      // 🟢 ACTUALIZACIÓN DE PRECIOS PARA EUROPA
+      const valPro = pricingEuropa.querySelector(".pricing-value-pro");
+      const valEnterprise = pricingEuropa.querySelector(".pricing-value-enterprise");
       const note = pricingEuropa.querySelector(".pricing-note");
-      if (val) val.textContent = "49 €";
-      if (note) note.textContent = "* Requiere pago único de activación de 249 € en modalidad mensual.";
+
+      if (valPro) valPro.textContent = "49 €";
+      if (valEnterprise) valEnterprise.textContent = "249 €";
+      // Convertimos el costo de activación de Enterprise a Euros de forma coherente
+      if (note) note.textContent = "* Requiere pago único de activación de 299 € en modalidad mensual.";
+
     } else {
       pricingEuropa.classList.add("d-none");
       pricingLatam.classList.remove("d-none");
 
-      const val = pricingLatam.querySelector(".pricing-value");
+      // 🟢 ACTUALIZACIÓN DE PRECIOS PARA LATAM
+      const valPro = pricingLatam.querySelector(".pricing-value-pro");
+      const valEnterprise = pricingLatam.querySelector(".pricing-value-enterprise");
       const note = pricingLatam.querySelector(".pricing-note");
-      if (val) val.textContent = "$45";
-      if (note) note.textContent = "* Requiere pago único de activación de $200 en modalidad mensual.";
+
+      if (valPro) valPro.textContent = "$45";
+      if (valEnterprise) valEnterprise.textContent = "$200"; // Modifica por tu valor real en dólares para Enterprise LATAM
+      if (note) note.textContent = "* Requiere pago único de activación de 300 € en modalidad mensual.";
     }
   }
 });
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    const swiper = new Swiper('.apple-swiper-container', {
-        loop: true,
-        grabCursor: true,
-        centeredSlides: true,
-        speed: 600,
-        
-        // Atributos de reparación para inicialización reactiva en Bootstrap 5
-        observer: true,
-        observeParents: true,
-        
-        autoplay: {
-            delay: 4500,
-            disableOnInteraction: false,
-        },
-        pagination: {
-            el: '.apple-pagination',
-            clickable: true,
-        },
-    });
-});
+
 </script>
 
 
 
 
-<script src="https://jsdelivr.net"></script>
 </body>
 
 </html>

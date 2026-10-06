@@ -30,32 +30,43 @@
           
           <!-- Lista de Características -->
           <ul class="list-unstyled flex-grow-1 text-light-muted m-0 p-0" style="color: #ceced2;">
-            <li class="d-flex align-items-center gap-3 mb-3">
-              <i class="fa-solid fa-circle-check text-primary-custom" style="color: #0071e3;"></i>
-              <span>Acceso integral a <strong>Klyntic Paciente</strong></span>
-            </li>
-            <li class="d-flex align-items-center gap-3 mb-3">
-              <i class="fa-solid fa-circle-check text-primary-custom" style="color: #0071e3;"></i>
-              <span>Módulo de <strong>Reserva Express</strong> nativo</span>
-            </li>
-            <li class="d-flex align-items-center gap-3 mb-3">
-              <i class="fa-solid fa-circle-check text-primary-custom" style="color: #0071e3;"></i>
-              <span>Historial clínico y agenda centralizada en la nube</span>
-            </li>
-            <li class="d-flex align-items-center gap-3 mb-3">
-              <i class="fa-solid fa-circle-check text-primary-custom" style="color: #0071e3;"></i>
-              <span>Notificaciones push inmediatas e ilimitadas</span>
-            </li>
-            <li class="d-flex align-items-center gap-3 mb-4">
-              <i class="fa-solid fa-circle-check text-primary-custom" style="color: #0071e3;"></i>
-              <span>Infraestructura con soporte preferencial</span>
-            </li>
+            <li class="d-flex align-items-start gap-3 mb-3">
+                  <i class="fa-solid fa-circle-check text-primary-custom mt-1" style="color: #0071e3; margin-right: 5px;"></i>
+                  <span><strong>Klyntic Paciente:</strong> Aplicación web premium para que sus pacientes gestionen su
+                    historial y pagos.</span>
+                </li>
+                <li class="d-flex align-items-start gap-3 mb-3">
+                  <i class="fa-solid fa-circle-check text-primary-custom mt-1" style="color: #0071e3; margin-right: 5px;"></i>
+                  <span><strong>Reserva Express:</strong> Enlace personalizado para agendamiento inteligente en 10
+                    segundos.</span>
+                </li>
+                <li class="d-flex align-items-start gap-3 mb-3">
+                  <i class="fa-solid fa-circle-check text-primary-custom mt-1" style="color: #0071e3; margin-right: 5px;"></i>
+                  <span><strong>Control Clínico Pro:</strong> Agenda síncrona al milisegundo e historias clínicas
+                    digitales seguras.</span>
+                </li>
+                <li class="d-flex align-items-start gap-3 mb-3">
+                  <i class="fa-solid fa-circle-check text-primary-custom mt-1" style="color: #0071e3; margin-right: 5px;"></i>
+                  <span><strong>Alertas Push Nativa:</strong> Notificaciones instantáneas en los móviles de su equipo
+                    sin costes por mensaje.</span>
+                </li>
+                <li class="d-flex align-items-start gap-3">
+                  <i class="fa-solid fa-circle-check text-primary-custom mt-1" style="color: #0071e3; margin-right: 5px;"></i>
+                  <span><strong>Seguridad Arquitectónica:</strong> Filtro estricto de datos de entrada y blindaje
+                    anti-baneos de Meta.</span>
+                </li>
           </ul>
           
           <!-- Acción Minimalista Apple -->
           <div class="mt-auto pt-3 text-center">
-            <a href="#" class="btn btn-primary px-4 py-2 w-100 mb-2" style="background-color: #0071e3; border: none; border-radius: 12px; font-weight: 500;">Iniciar periodo de prueba de 7 días</a>
-            <p class="text-muted xx-small mt-2 mb-0" style="font-size: 0.73rem;">Suscripción mensual flexible. Sin contratos de permanencia obligatoria.</p>
+            <a href="#register"class="btn btn-primary px-4 py-2 w-100 mb-2" style="background-color: #0071e3; border: none; border-radius: 12px; font-weight: 500;">Iniciar periodo de prueba de 7 días</a>
+            <!-- <a [href]="'https://wa.me' + phone + '?text=' + message" 
+             target="_blank"
+             rel="noopener noreferrer"
+             class="btn btn-primary px-4 py-2 w-100 mb-2" style="background-color: #0071e3; border: none; border-radius: 12px; font-weight: 500;">
+            <i class="fa-brands fa-whatsapp fa-lg me-2 text-success-neon"></i> Iniciar periodo de prueba de 7 días
+          </a> -->
+            <p class="text-muted xx-small mt-2 mb-0" style="font-size: 0.73rem;">* Requiere pago único de activación de 249 € en modalidad mensual.</p>
           </div>
         </div>
       </div>
@@ -70,8 +81,8 @@
           
           <!-- Precio (Formato Europeo) -->
           <div class="d-flex align-items-baseline mb-4">
-            <span class="display-4 fw-bold text-white">149 €</span>
-            <span class="text-muted ms-2">/ mes</span>
+            <span class="display-4 fw-bold text-white">69 €</span>
+            <span class="text-muted ms-2">/ x médico al mes</span>
           </div>
           
           <hr class="border-secondary opacity-25 my-3">
@@ -101,8 +112,15 @@
           </ul>
           
           <!-- Acción Minimalista Apple -->
-          <div class="mt-auto pt-3">
-            <a href="#" class="btn btn-outline-light px-4 py-2 w-100" style="border-radius: 12px; font-weight: 500; border-color: rgba(255,255,255,0.2);">Solicitar consultoría técnica</a>
+          <div class="mt-auto pt-3 text-center">
+            <!-- <a href="#" class="btn btn-outline-light px-4 py-2 w-100" style="border-radius: 12px; font-weight: 500; border-color: rgba(255,255,255,0.2);">Solicitar consultoría técnica</a> -->
+             <a [href]="'https://wa.me' + phone + '?text=' + message" 
+             target="_blank"
+             rel="noopener noreferrer"
+             class="btn btn-outline-light px-4 py-2 w-100" style="border-radius: 12px; font-weight: 500; border-color: rgba(255,255,255,0.2);">
+            <i class="fa-brands fa-whatsapp fa-lg me-2 text-success-neon"></i> Solicitar consultoría técnica
+          </a>
+            <p class="text-muted xx-small mt-2 mb-0" style="font-size: 0.75rem;">* Requiere pago único de activación de 349 € en modalidad mensual.</p>
           </div>
         </div>
       </div>
