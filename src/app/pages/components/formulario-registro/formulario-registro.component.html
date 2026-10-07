@@ -196,9 +196,9 @@
 
             <!-- Campo Oculto del ID -->
             <input type="hidden" formControlName="id" />
-
+            <app-loading *ngIf="loadingEnvio"></app-loading>
             <!-- Botón de Envío Dominante Estilo Apple -->
-            <div class="col-12 mt-4">
+            <div class="col-12 mt-4" *ngIf="!loadingEnvio">
               <button type="submit" [disabled]="appregistroForm.invalid"
                 class="btn btn-apple-submit w-100 py-3 fw-medium rounded-pill shadow-sm">
                 Registrarme

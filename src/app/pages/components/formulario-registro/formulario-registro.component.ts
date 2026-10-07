@@ -27,6 +27,7 @@ export class FormularioRegistroComponent implements OnInit {
 
   email = new FormControl();
   submitted = false;
+  loadingEnvio = false;
   username: FormControl<any>;
 
   constructor(
@@ -94,12 +95,13 @@ export class FormularioRegistroComponent implements OnInit {
     const data = {
       ...this.appregistroForm.value,
     }
-
+    this.loadingEnvio = true;
     // console.log(data);
     this.doctorService.createDoctor(data).subscribe(
       (res: any) => {
         this.doctor = res;
         // this.router.navigateByUrl('/gracias');
+        this.loadingEnvio = false;
         Swal.fire('Registrado!', `Gracias por Registrarte!, estaremos comunicandonos pronto`, 'success');
         this.ngOnInit();
         // location.reload();
