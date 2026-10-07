@@ -19,15 +19,17 @@ interface Recurso {
   styleUrls: ['./recursos-videos.component.css']
 })
 export class RecursosVideosComponent {
-  recursos: Recurso[] = []; // Aquí inyectas lo que viene de tu API de Node.js
+  recursos: Recurso[] = []; 
   recursosFiltrados: Recurso[] = [];
   categoriaActiva: string = 'todos';
-
-  isLoading: boolean = false; // Para mostrar un spinner mientras se cargan los recursos
-
-   // Guardará temporalmente el video que el médico quiere ver
+  isLoading: boolean = false; 
   videoSeleccionado: Recurso | null = null;
   private modalInstancia: any;
+
+  public urlVideoPura: string = ''; // Para la etiqueta <video> (Pide un string)
+  public urlIframeSanitizada: SafeResourceUrl | null = null; // Para la etiqueta <iframe>
+
+
 
   categorias = [
     { label: 'Todos', value: 'todos' },
@@ -41,16 +43,16 @@ export class RecursosVideosComponent {
     private sanitizer: DomSanitizer,
     private recursosService: RecursoService,
 
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     // this.obtenerRecursosDeApi();
     this.getRecursos();
   }
 
-  getRecursos(){
+  getRecursos() {
     this.isLoading = true;
-    this.recursosService.getRecursosActivos().subscribe((resp:any)=>{
+    this.recursosService.getRecursosActivos().subscribe((resp: any) => {
       this.recursos = resp;
       this.isLoading = false;
     })
@@ -97,43 +99,38 @@ export class RecursosVideosComponent {
   }
 
   // MODIFICADA: Ahora le pasamos autoplay=1 para el formato Modal
-    transformarUrl(url: string): SafeResourceUrl {
+  transformarUrl(url: string): string {
     let urlEmbebida = url;
-    
-    // 1. Mantener soporte para ScreenPal si es necesario
     if (url.includes('/watch/')) {
       urlEmbebida = url.replace('/watch/', '/player/');
       urlEmbebida = `${urlEmbebida}?sideBar=0&title=0&autoplay=1`;
-      return this.sanitizer.bypassSecurityTrustResourceUrl(urlEmbebida);
     }
-    
-    // 2. 🔥 OPTIMIZACIÓN AGRESIVA PARA CLOUDINARY
-    if (url.includes('cloudinary.com') && url.includes('/video/upload/')) {
-      // Inyectamos f_auto (formato) y q_auto (compresión) justo después de /upload/
-      // Esto activa la red de distribución (CDN) de Cloudinary para hacer streaming fluido
-      urlEmbebida = url.replace('/video/upload/', '/video/upload/f_auto,q_auto/');
-    }
-    
-    // Saltamos la seguridad de Angular de forma limpia
-    return this.sanitizer.bypassSecurityTrustResourceUrl(urlEmbebida);
+    return urlEmbebida;
   }
 
 
   // Lógica optimizada para abrir el Modal sin conflictos de capas
   abrirModalVideo(video: Recurso) {
     this.videoSeleccionado = video;
+    const urlFormateada = this.transformarUrl(video.urlMedia);
+
+    // Si es Cloudinary o un archivo de video directo, asignamos la URL en string directo
+    if (video.urlMedia.includes('.mp4') || video.urlMedia.includes('cloudinary')) {
+      this.urlVideoPura = urlFormateada;
+      this.urlIframeSanitizada = null;
+    } else {
+      // Si es un iframe heredado (ScreenPal), lo sanitizamos de forma segura
+      this.urlIframeSanitizada = this.sanitizer.bypassSecurityTrustResourceUrl(urlFormateada);
+      this.urlVideoPura = '';
+    }
+
     const modalElement = document.getElementById('videoModal');
-    
     if (modalElement) {
       this.modalInstancia = new bootstrap.Modal(modalElement, {
-        backdrop: true, // Mantiene el fondo oscuro
+        backdrop: true,
         keyboard: true
       });
-      
-      // 🚀 TRUCO MAESTRO: Movemos el nodo del modal directamente al <body>
-      // Esto lo saca de la sección '.videoss' y destruye el bug del z-index para siempre
       document.body.appendChild(modalElement);
-      
       this.modalInstancia.show();
     }
   }
@@ -144,6 +141,8 @@ export class RecursosVideosComponent {
       this.modalInstancia.hide();
     }
     this.videoSeleccionado = null;
+    this.urlVideoPura = '';
+    this.urlIframeSanitizada = null;
   }
 
 
