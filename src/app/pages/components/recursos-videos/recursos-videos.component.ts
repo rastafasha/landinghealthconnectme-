@@ -97,19 +97,27 @@ export class RecursosVideosComponent {
   }
 
   // MODIFICADA: Ahora le pasamos autoplay=1 para el formato Modal
-  transformarUrl(url: string): SafeResourceUrl {
+    transformarUrl(url: string): SafeResourceUrl {
     let urlEmbebida = url;
     
-    // Si es un enlace viejo de ScreenPal, mantiene su lógica
+    // 1. Mantener soporte para ScreenPal si es necesario
     if (url.includes('/watch/')) {
       urlEmbebida = url.replace('/watch/', '/player/');
       urlEmbebida = `${urlEmbebida}?sideBar=0&title=0&autoplay=1`;
       return this.sanitizer.bypassSecurityTrustResourceUrl(urlEmbebida);
     }
     
-    // Si es Cloudinary o un archivo de video directo, saltamos la seguridad limpiamente
+    // 2. 🔥 OPTIMIZACIÓN AGRESIVA PARA CLOUDINARY
+    if (url.includes('cloudinary.com') && url.includes('/video/upload/')) {
+      // Inyectamos f_auto (formato) y q_auto (compresión) justo después de /upload/
+      // Esto activa la red de distribución (CDN) de Cloudinary para hacer streaming fluido
+      urlEmbebida = url.replace('/video/upload/', '/video/upload/f_auto,q_auto/');
+    }
+    
+    // Saltamos la seguridad de Angular de forma limpia
     return this.sanitizer.bypassSecurityTrustResourceUrl(urlEmbebida);
   }
+
 
   // Lógica optimizada para abrir el Modal sin conflictos de capas
   abrirModalVideo(video: Recurso) {
