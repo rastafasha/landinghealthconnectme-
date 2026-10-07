@@ -99,11 +99,15 @@ export class RecursosVideosComponent {
   // MODIFICADA: Ahora le pasamos autoplay=1 para el formato Modal
   transformarUrl(url: string): SafeResourceUrl {
     let urlEmbebida = url;
+    
+    // Si es un enlace viejo de ScreenPal, mantiene su lógica
     if (url.includes('/watch/')) {
       urlEmbebida = url.replace('/watch/', '/player/');
-      // Le clavamos el autoplay=1 para que inicie solo al abrir el modal
       urlEmbebida = `${urlEmbebida}?sideBar=0&title=0&autoplay=1`;
+      return this.sanitizer.bypassSecurityTrustResourceUrl(urlEmbebida);
     }
+    
+    // Si es Cloudinary o un archivo de video directo, saltamos la seguridad limpiamente
     return this.sanitizer.bypassSecurityTrustResourceUrl(urlEmbebida);
   }
 
