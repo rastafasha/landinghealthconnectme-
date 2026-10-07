@@ -75,19 +75,25 @@
 
   <!-- ESTRUCTURA DEL MODAL BOOTSTRAP PARA EL VIDEO -->
   <!-- Modal de Video -->
+<!-- Modal de Video Optimizado -->
 <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content" style="background: #1c1c1e; color: #ffffff; border-radius: 14px;">
+  <!-- 🟢 Cambiamos a modal-xl (Extra Grande) para que tenga un ancho brutal en pantallas grandes -->
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content" style="background: #121214; color: #ffffff; border-radius: 16px; border: 1px solid #2c2c2e; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
       
-      <div class="modal-header" style="border-bottom: 1px solid #2c2c2e;">
-        <h5 class="modal-title" id="videoModalLabel">{{ videoSeleccionado?.titulo }}</h5>
+      <!-- Cabecera limpia con diseño sutil -->
+      <div class="modal-header px-4 py-3" style="border-bottom: 1px solid #1c1c1e; background: #1a1a1e;">
+        <h5 class="modal-title font-weight-bold" id="videoModalLabel" style="font-size: 1.25rem; letter-spacing: -0.3px;">
+          {{ videoSeleccionado?.titulo }}
+        </h5>
         <button type="button" class="btn-close btn-close-white" (click)="cerrarModalVideo()" aria-label="Close"></button>
       </div>
 
-      <div class="modal-body p-0">
-        <div class="ratio ratio-16x9" *ngIf="videoSeleccionado">
+      <!-- Cuerpo del modal expandido -->
+      <div class="modal-body p-0 style-video-container">
+        <div class="w-100 position-relative" style="background: #000000;" *ngIf="videoSeleccionado">
           
-          <!-- 🔥 CASO A: SI EL VIDEO VIENE DE CLOUDINARY (Es un archivo .mp4 directo) -->
+          <!-- 🎥 CASO A: SI EL VIDEO VIENE DE CLOUDINARY (Usa la etiqueta nativa) -->
           <video 
             *ngIf="videoSeleccionado.urlMedia.includes('.mp4') || videoSeleccionado.urlMedia.includes('cloudinary')"
             [src]="transformarUrl(videoSeleccionado.urlMedia)"
@@ -95,18 +101,20 @@
             autoplay
             playsinline
             controlsList="nodownload"
-            style="width: 100%; height: 100%; object-fit: contain;">
+            class="d-block mx-auto"
+            style="width: 100%; max-height: 75vh; aspect-ratio: 16/9; object-fit: contain;">
             Su navegador no soporta la reproducción de video.
           </video>
 
-          <!-- 🎥 CASO B: SI ES UN EMBAJADOR VIEJO (ScreenPal u otros iFrames) -->
-          <iframe 
-            *ngIf="!videoSeleccionado.urlMedia.includes('.mp4') && !videoSeleccionado.urlMedia.includes('cloudinary')"
-            [src]="transformarUrl(videoSeleccionado.urlMedia)" 
-            frameborder="0" 
-            allow="autoplay; fullscreen" 
-            allowfullscreen>
-          </iframe>
+          <!-- 📺 CASO B: SI ES UN EMBED VIEJO (ScreenPal u otros iFrames) -->
+          <div class="ratio ratio-16x9" *ngIf="!videoSeleccionado.urlMedia.includes('.mp4') && !videoSeleccionado.urlMedia.includes('cloudinary')">
+            <iframe 
+              [src]="transformarUrl(videoSeleccionado.urlMedia)" 
+              frameborder="0" 
+              allow="autoplay; fullscreen" 
+              allowfullscreen>
+            </iframe>
+          </div>
 
         </div>
       </div>
@@ -114,6 +122,7 @@
     </div>
   </div>
 </div>
+
 
 
 
