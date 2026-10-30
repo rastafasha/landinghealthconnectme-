@@ -25,6 +25,8 @@ import { PipesModule } from 'src/app/pipes/pipes.module';
 import { PlanesPreciosComponent } from './planes-precios/planes-precios.component';
 import { PlanesPreciosEuropaComponent } from './planes-precios-europa/planes-precios-europa.component';
 import { PlanesPreciosKlynticProComponent } from './planes-precios-klyntic-pro/planes-precios-klyntic-pro.component';
+import { CookieBannerComponent } from './cookie-banner/cookie-banner.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -51,7 +53,8 @@ import { PlanesPreciosKlynticProComponent } from './planes-precios-klyntic-pro/p
     KlynticExpFunnelCrecimientoComponent,
     PlanesPreciosComponent,
     PlanesPreciosEuropaComponent,
-    PlanesPreciosKlynticProComponent
+    PlanesPreciosKlynticProComponent,
+    CookieBannerComponent
   ],
   exports: [
     ComentariosComponent,
@@ -76,12 +79,14 @@ import { PlanesPreciosKlynticProComponent } from './planes-precios-klyntic-pro/p
     KlynticExpFunnelCrecimientoComponent,
     PlanesPreciosComponent,
     PlanesPreciosEuropaComponent,
-    PlanesPreciosKlynticProComponent
+    PlanesPreciosKlynticProComponent,
+    CookieBannerComponent
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    PipesModule
+    PipesModule,
+    RouterModule
   ]
 })
 export class ComponentsModule { }

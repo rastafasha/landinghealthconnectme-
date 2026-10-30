@@ -6,18 +6,26 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentsModule } from './components/components.module';
-import { PipesModule } from '../pipes/pipes.module';
+import { CookiesComponent } from './legal/cookies/cookies.component';
+import { PoliticasPrivacidadComponent } from './legal/politicas-privacidad/politicas-privacidad.component';
+import { AvisoLegalComponent } from './legal/aviso-legal/aviso-legal.component';
 
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    GraciasComponent
+    GraciasComponent,
+    CookiesComponent,
+    PoliticasPrivacidadComponent,
+    AvisoLegalComponent
   ],
   exports: [
     HomeComponent,
-    GraciasComponent
+    GraciasComponent,
+    CookiesComponent,
+    PoliticasPrivacidadComponent,
+    AvisoLegalComponent
   ],
   imports: [
     CommonModule,

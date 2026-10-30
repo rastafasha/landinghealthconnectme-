@@ -193,6 +193,18 @@
                 </label>
               </div>
             </div>
+            <div class="col-12 mt-3">
+              <div class="form-check  text-start">
+            <input class="form-check-input" type="checkbox" id="checkTerminos" required
+              formControlName="aceptaTerminos">
+            <label class="form-check-label small text-apple-muted-label" for="checkTerminos">
+              He leído y acepto la <a routerLink="/privacidad" 
+                class="text-apple-blue-link text-decoration-none fw-medium">Política de Privacidad</a> y el <a routerLink="/aviso-legal"
+                 class="text-apple-blue-link text-decoration-none fw-medium">Aviso Legal</a> de Klyntic.
+            </label>
+          </div>
+            </div>
+            
 
             <!-- Campo Oculto del ID -->
             <input type="hidden" formControlName="id" />
