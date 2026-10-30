@@ -15,6 +15,7 @@ export class Doctor {
     rrss: string;
     address: string;
     terminos: string;
+    aceptaTerminos: string;
 
     type: ProjectType;
     pais: Pais;

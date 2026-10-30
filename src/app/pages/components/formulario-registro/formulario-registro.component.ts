@@ -68,6 +68,7 @@ export class FormularioRegistroComponent implements OnInit {
       dondeSeEntero: [''],
       // 🟢 CORREGIDO: Usamos Validators.requiredTrue para obligar a marcar la casilla legal
       terminos: [false, Validators.requiredTrue], 
+      aceptaTerminos: [false, Validators.requiredTrue], 
       statusapp: ['PENDIENTE'],
     });
   }
@@ -86,6 +87,7 @@ export class FormularioRegistroComponent implements OnInit {
     formData.append('tipoClinica', this.appregistroForm.get('tipoClinica')?.value);
     formData.append('name', this.appregistroForm.get('name')?.value);
     formData.append('terminos', this.appregistroForm.get('terminos')?.value);
+    formData.append('aceptaTerminos', this.appregistroForm.get('aceptaTerminos')?.value);
     formData.append('dondeSeEntero', this.appregistroForm.get('dondeSeEntero')?.value);
     formData.append('statusapp', 'PENDIENTE');
 
