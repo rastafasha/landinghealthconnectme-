@@ -1,4 +1,10 @@
 User-agent: *
-Allow: /
 
+# Permitir explícitamente el rastreo del landing y las páginas legales
+Allow: /
+Allow: /aviso-legal
+Allow: /privacidad
+Allow: /politica-cookies
+
+# Ubicación del mapa del sitio
 Sitemap: https://klyntic.com
