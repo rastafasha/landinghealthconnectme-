@@ -99,6 +99,17 @@
   text-align: left;
 }
 
+.klyntic-express-section .superpower-card p {
+  color: #86868b !important; /* Gris Apple oficial */
+  font-size: 0.92rem;
+  font-weight: 400;
+}
+
+.klyntic-express-section .superpower-card {
+  transform: translateY(0); /* Estado inicial para la GPU */
+  will-change: transform, border-color; /* Avisa al navegador para optimizar la RAM */
+}
+
 @media (max-width: 576px) {
   .superpower-card .d-flex {
     flex-direction: column !important;
