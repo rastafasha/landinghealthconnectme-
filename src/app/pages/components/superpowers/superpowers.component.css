@@ -98,3 +98,11 @@
 .klyntic-express-section p {
   text-align: left;
 }
+
+@media (max-width: 576px) {
+  .superpower-card .d-flex {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px;
+  }
+}

@@ -33,7 +33,7 @@ export class SuperpowersComponent {
       title: 'Agenda Dinámica',
       badge: 'Multiconsultorio',
       badgeClass: 'badge-agenda',
-      description: '¿Trabajas en diferentes sedes? Configura tu disponibilidad por día y hora. El sistema cambia automáticamente la ubicación y la tarifa de la cita según el consultorio elegido.',
+      description: '¿Consultorios múltiples? Configura tu disponibilidad por día y hora. El sistema cambia automáticamente la ubicación y la tarifa de la cita según el consultorio elegido.',
       benefit: 'Cero confusiones de pacientes llegando a la sede equivocada.'
     },
     {
@@ -43,11 +43,11 @@ export class SuperpowersComponent {
       badge: 'Cero Fugas de Caja',
       badgeClass: 'badge-control',
       description: 'Recibe notificaciones instantáneas en tu teléfono cada vez que un paciente solicita cita o reporta un pago. Ideal para mantener control absoluto sobre el cuadre de caja diario.',
-      benefit: 'Monitoreo absoluto de tus ingresos al momento.'
+      benefit: 'Cuadre de caja diario y conciliación de Pago Móvil/Zelle al instante.'
     },
     {
       iconClass: 'text-success-neon',
-      iconPath: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z', // Info icon
+      iconPath: 'M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm5 12h-3v3h-4v-3H7v-4h3V8h4v3h3v4z', // Info icon
       title: 'Klyntic Pacientes',
       badge: 'Historial Digital',
       badgeClass: 'badge-pacientes',
