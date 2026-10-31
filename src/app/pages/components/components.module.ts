@@ -27,6 +27,7 @@ import { PlanesPreciosEuropaComponent } from './planes-precios-europa/planes-pre
 import { PlanesPreciosKlynticProComponent } from './planes-precios-klyntic-pro/planes-precios-klyntic-pro.component';
 import { CookieBannerComponent } from './cookie-banner/cookie-banner.component';
 import { RouterModule } from '@angular/router';
+import { SuperpowersComponent } from './superpowers/superpowers.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { RouterModule } from '@angular/router';
     PlanesPreciosComponent,
     PlanesPreciosEuropaComponent,
     PlanesPreciosKlynticProComponent,
-    CookieBannerComponent
+    CookieBannerComponent,
+    SuperpowersComponent
   ],
   exports: [
     ComentariosComponent,
@@ -80,7 +82,8 @@ import { RouterModule } from '@angular/router';
     PlanesPreciosComponent,
     PlanesPreciosEuropaComponent,
     PlanesPreciosKlynticProComponent,
-    CookieBannerComponent
+    CookieBannerComponent,
+    SuperpowersComponent
   ],
   imports: [
     CommonModule,
